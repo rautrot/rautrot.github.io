@@ -129,7 +129,7 @@ function loadCSV(fileName, column) {
     xhr.open("GET", fileName, true);
     xhr.send(null);
     
-    xhr.onload = function(){
+    xhr.load = function(){
     
     	var csv = xhr.responseText;
     	console.log(csv);
