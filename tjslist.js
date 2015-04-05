@@ -55,7 +55,7 @@ function loadList(){
 
 
 function createCSV(arr) {
-
+  var i = 0;
  // 指定されたデータを保持するBlobを作成する。
  	while(arr[i] != null){
  		tmp += arr[i].toString() + '\n';
