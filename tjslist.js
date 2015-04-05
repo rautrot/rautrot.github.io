@@ -106,4 +106,4 @@ document.getElementById("files").addEventListener('change',function(evt){
     console.log('Second file is not selected!');
   }
 
-});
+},false);
