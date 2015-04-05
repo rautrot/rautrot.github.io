@@ -68,7 +68,7 @@ function createCSV(id, content) {
 
 
 
-    var data = loadCSV("tjslist.csv",0);
+    var data = loadCSV("tjslist.csv");
     console.log(data);
 
 
