@@ -20,10 +20,15 @@ $(function() {
     }
 
     $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
- 			loadCSV("tjslist.csv");
+ 			test();
  		}
     );
 });
+
+function test(){
+  var ar = loadCSV("tjslist.csv");
+  console.log(ar);
+}
 
 //リストと比較して頻度を求める関数
 function serch(list){
@@ -99,7 +104,10 @@ function loadCSV(fileName, column) {
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      serch(xhr.responseText);
+      //serch(xhr.responseText);
+      var ar = xhr.responseText.split(",");
+      return ar;
+
     	}
     }
       xhr.open("GET", fileName, true);
