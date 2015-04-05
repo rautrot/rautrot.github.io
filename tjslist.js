@@ -110,12 +110,12 @@ document.getElementById("files").addEventListener('change',function(evt){
 
 var obj2 = document.getElementById("selmulti");
 
-obj2.addEventListener("change", function(evt){
+document.getElementById("selmulti").addEventListener("change", function(evt){
   var file = evt.target.files;
   var num = file.length;
 
   for (var i = 0 ; i < num ; i++ )
   {
-    alert(file[i].name);
+    console.log(file[i].name);
   }
 },false);
