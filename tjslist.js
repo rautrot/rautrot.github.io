@@ -1,7 +1,8 @@
 /*
-	createCSVは実装済み（細かい変更必須）
+  loadList()は実装済み
+	createCSV()は実装済み（細かい変更必須）
 
-	serch() loadList()は未実装
+	serch()は未実装
 
 
 
@@ -20,17 +21,27 @@ $(function() {
     }
 
     $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
- 			test();
+ 	      loadList("tjslist.csv");
  		}
     );
 });
 
-function test(){
-  var ar = loadCSV("tjslist.csv");
-  console.log(ar);
+//csvを読み込み他の関数に渡す
+function loadList(fileName) {
+  var xhr = new XMLHttpRequest();
+
+
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4 && xhr.status === 200){
+      serch(xhr.responseText);
+    }
+  }
+  xhr.open("GET", fileName, true);
+  xhr.send(null);
 }
 
-//リストと比較して頻度を求める関数
+
+//リストと比較して頻度を求め，他の関数に渡す
 function serch(list){
 	var arr = [ [] ];
 
@@ -40,25 +51,7 @@ function serch(list){
   createCSV(arr); //arrは最終的な二次元配列
 }
 
-//tjslist.csvを読み込み，配列として返す関数 こっちはダメ
-function loadList(){
-	var xhr = new XMLHttpRequest();
-	fileName = 'tjslist.csv';
-	xhr.open("GET",fileName,true);
-	xhr.send(null);
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState === 4){
-			var text = xhr.responseText; //textにtjslistが入っている
-			console.log(text);
-		}
-	}
-
-
-	return arr;
-}
-
-
-
+//csvファイルを作成する関数
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
@@ -95,30 +88,4 @@ function onInitFs(fs){
 		console.log('Second file is not selected!');
 	}
 	*/
-}
-
-
-function loadCSV(fileName, column) {
-    var xhr = new XMLHttpRequest();
-
-
-    xhr.onreadystatechange = function(){
-    	if(xhr.readyState === 4 && xhr.status === 200){
-      //serch(xhr.responseText);
-      var ar = xhr.responseText.split(",");
-      return ar;
-
-    	}
-    }
-      xhr.open("GET", fileName, true);
-      xhr.send(null);
-
-    /*for (var i = 0; i < csv.length; i++) {
-        var split = csv[i].split(",");
-        if (column !== undefined) {
-            csv[i] = split[column];
-        } else {
-            csv[i] = split;
-        }
-    }*/
 }
