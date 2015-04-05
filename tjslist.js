@@ -30,7 +30,8 @@ function serch(){
 	var data = [ [] ];
 
 
-	loadCSV("tjslist.csv"); // dataは頻度のリストを格納した二次元配列
+	var dat = loadCSV("tjslist.csv"); // dataは頻度のリストを格納した二次元配列
+  console.log(dat);
 }
 
 //tjslist.csvを読み込み，配列として返す関数 こっちはダメ
@@ -99,7 +100,8 @@ function loadCSV(fileName, column) {
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      createCSV(xhr.responseText);
+      //createCSV(xhr.responseText);
+      return xhr.responseText;
     	}
     }
       xhr.open("GET", fileName, true);
