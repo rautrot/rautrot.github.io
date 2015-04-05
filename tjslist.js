@@ -131,8 +131,9 @@ function loadCSV(fileName, column) {
     
     xhr.onload = function(){
     
-    var csv = xhr.responseText;
-    return csv;
+    	var csv = xhr.responseText;
+    	console.log(csv);
+    	return csv;
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
         if (column !== undefined) {
