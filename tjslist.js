@@ -1,4 +1,4 @@
-/*
+/**
 loadList()は実装済み
 createCSV()は実装済み（細かい変更必須）
 
@@ -53,7 +53,7 @@ function serch(list){
   for(var i = 0;file[i] != null;i++){
 
   }
-
+}
 
 
 
