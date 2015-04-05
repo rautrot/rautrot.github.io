@@ -118,7 +118,7 @@ console.log('Second file is not selected!');
 },false);
 */
 
-document.getElementById("files").addEventListener("change", function(evt){
+document.getElementById("selmulti").addEventListener("change", function(evt){
   var file = evt.target.files;
   var num = file.length;
 
