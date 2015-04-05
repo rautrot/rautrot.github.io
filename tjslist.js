@@ -50,10 +50,7 @@ function serch(list){
 
 
 
-  for(var i = 0;file[i] != null;i++){
-
-  }
-}
+  
 
 
 
