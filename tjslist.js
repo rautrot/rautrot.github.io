@@ -126,14 +126,16 @@ var listData = [
 
 function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", fileName, true);
+    xhr.open("GET", fileName, false);
     xhr.send(null);
     
-    xhr.load = function(){
+    xhr.onreadystatechange = function(){
     
+    	if(xhr.readyState === 5 && xhr.status === 200){
     	var csv = xhr.responseText;
     	console.log(csv);
     	return csv;
+    	}
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
         if (column !== undefined) {
