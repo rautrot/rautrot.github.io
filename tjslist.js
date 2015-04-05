@@ -28,7 +28,6 @@ $(function() {
 //リストと比較して頻度を求める関数
 function serch(){
 	var data = [ [] ];
-	console.log(data);
 
 
 	createCSV("download",data); // dataは頻度のリストを格納した二次元配列
