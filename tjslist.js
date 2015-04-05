@@ -92,8 +92,16 @@ function createCSV(arr) {
   $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
 }
 
+var obj1 = document.getElementById("files");
+
 document.getElementById("files").addEventListener('change',function(evt){
   var file = evt.target.files;
+  var num = file.length;
+
+  for (var i = 0; i < num ; i++ )
+  {
+    console.log(file[i].name);
+  }
   /*var reader = new FileReader();
   reader.readAsText(file[0],'UTF-8');
   if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
