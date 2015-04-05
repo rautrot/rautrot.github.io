@@ -117,3 +117,14 @@ console.log('Second file is not selected!');
 
 },false);
 */
+var obj2 = document.getElementById("selmulti");
+
+obj2.addEventListener("change", function(evt){
+  var file = evt.target.files;
+  var num = file.length;
+
+  for (var i = 0 ; i < num ; i++ )
+  {
+    alert(file[i].name);
+  }
+},false);
