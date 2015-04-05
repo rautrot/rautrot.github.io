@@ -105,7 +105,7 @@ function loadCSV(fileName, column) {
     var csv = '';
 
     xhr.onreadystatechange = function(){
-      while(0){
+      while(1){
     	if(xhr.readyState === 4 && xhr.status === 200){
       break;
     	}
