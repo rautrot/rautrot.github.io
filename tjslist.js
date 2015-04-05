@@ -92,33 +92,33 @@ function createCSV(arr) {
   $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
 }
 
+/*
 var obj1 = document.getElementById("files");
 
 document.getElementById("files").addEventListener('change',function(evt){
-  var file = evt.target.files;
-  var num = file.length;
+var file = evt.target.files;
+var num = file.length;
 
-  for (var i = 0; i < num ; i++ )
-  {
-    console.log(file[i].name);
-  }
-  /*var reader = new FileReader();
-  reader.readAsText(file[0],'UTF-8');
-  if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
-  reader.onload = function(){
-  console.log(file[0]);
-  console.log(file[1]);
+for (var i = 0; i < num ; i++ )
+{
+console.log(file[i].name);
+}
+var reader = new FileReader();
+reader.readAsText(file[0],'UTF-8');
+if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
+reader.onload = function(){
+console.log(file[0]);
+console.log(file[1]);
 }
 }
 else{
 console.log('Second file is not selected!');
-}*/
+}
 
 },false);
+*/
 
-var obj2 = document.getElementById("selmulti");
-
-document.getElementById("selmulti").addEventListener("change", function(evt){
+document.getElementById("files").addEventListener("change", function(evt){
   var file = evt.target.files;
   var num = file.length;
 
