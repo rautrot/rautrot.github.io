@@ -64,7 +64,7 @@ function createCSV(id, content) {
  		i++;
  	}
     var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
- 
+
 
 
 
@@ -81,27 +81,7 @@ function createCSV(id, content) {
 }
 
 
-
-
-
-
-
-
 function onInitFs(fs){
-	fs.root.getFile('tjslist.csv',{},function(fileEntry){
-		fileEntry.file(function(file){
-			var reader = new FileReader();
-			reader.onloadend = function(e){
-				var txtArea = document.createElement('textarea');
-				textArea.value = this.result;
-				document.body.appendChild(txtArea);
-
-			};
-			reader.readAsText(file);
-		},errorHandler);
-	},errorHandler);
-
-	window.requestFileSystem(window.TEMPORARY,1024*1024,onInitFs,errorHandler);
 	/*
 	var file = evt.target.files;
 	var reader = new FileReader();
@@ -114,27 +94,21 @@ function onInitFs(fs){
 	}
 	else{
 		console.log('Second file is not selected!');
-	}	
+	}
 	*/
 }
 
-
-//tjsのリスト
-var listData = [
-		
-]
 
 function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", fileName, true);
     xhr.send(null);
-    
+    var csv = '';
+
     xhr.onreadystatechange = function(){
-    
+
     	if(xhr.readyState === 4 && xhr.status === 200){
-    	var csv = xhr.responseText;
-    	console.log(csv);
-    	return csv;
+    	csv = xhr.responseText;
     	}
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
@@ -145,4 +119,5 @@ function loadCSV(fileName, column) {
         }
     }*/
     }
+    return csv;
 }
