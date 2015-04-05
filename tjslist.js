@@ -20,18 +20,19 @@ $(function() {
     }
 
     $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
- 			serch();
+ 			loadCSV("tjslist.csv");
  		}
     );
 });
 
 //リストと比較して頻度を求める関数
-function serch(){
-	var data = [ [] ];
+function serch(list){
+	var arr = [ [] ];
 
+  // 検索処理
 
-	var dat = loadCSV("tjslist.csv"); // dataは頻度のリストを格納した二次元配列
-  console.log(dat);
+  arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]; //動作確認用
+  createCSV(arr); //arrは最終的な二次元配列
 }
 
 //tjslist.csvを読み込み，配列として返す関数 こっちはダメ
@@ -47,25 +48,22 @@ function loadList(){
 		}
 	}
 
+
 	return arr;
 }
 
 
 
-function createCSV(content) {
+function createCSV(arr) {
 
  // 指定されたデータを保持するBlobを作成する。
- 	var arr = [['abc',2,3],[4,5,6],[7,8,9]];
- 	var tmp = '';
- 	var i = 0;
- 	arr[0][1]++;
  	while(arr[i] != null){
  		tmp += arr[i].toString() + '\n';
  		i++;
  	}
     var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
-    console.log(content);
+    console.log(tmp);
 
 
 
@@ -100,8 +98,7 @@ function loadCSV(fileName, column) {
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      //createCSV(xhr.responseText);
-      return xhr.responseText;
+      serch(xhr.responseText);
     	}
     }
       xhr.open("GET", fileName, true);
