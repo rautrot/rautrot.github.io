@@ -99,13 +99,15 @@ function onInitFs(fs){
 
 function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", fileName, true);
-    xhr.send(null);
+
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
       console.log(xhr.responseText);
     	}
+      xhr.open("GET", fileName, true);
+      xhr.send(null);
+
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
         if (column !== undefined) {
