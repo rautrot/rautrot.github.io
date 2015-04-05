@@ -128,9 +128,11 @@ function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", fileName, true);
     xhr.send(null);
+    
     xhr.onload = function(){
     
     var csv = xhr.responseText;
+    return csv;
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
         if (column !== undefined) {
@@ -139,6 +141,5 @@ function loadCSV(fileName, column) {
             csv[i] = split;
         }
     }*/
-    return csv;
     }
 }
