@@ -105,9 +105,9 @@ function loadCSV(fileName, column) {
     var csv = '';
 
     xhr.onreadystatechange = function(){
-
+      while(0){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      return xhr.responseText;
+      break;
     	}
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
@@ -117,5 +117,7 @@ function loadCSV(fileName, column) {
             csv[i] = split;
         }
     }*/
+  }
+    return xhr.responseText;
     }
 }
