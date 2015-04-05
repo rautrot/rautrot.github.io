@@ -107,8 +107,7 @@ function loadCSV(fileName, column) {
     xhr.onreadystatechange = function(){
 
     	if(xhr.readyState === 4 && xhr.status === 200){
-    	csv = xhr.responseText;
-      return csv;
+      return xhr.responseText;
     	}
     /*for (var i = 0; i < csv.length; i++) {
         var split = csv[i].split(",");
