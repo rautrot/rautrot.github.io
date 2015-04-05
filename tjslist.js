@@ -118,6 +118,6 @@ function loadCSV(fileName, column) {
         }
     }*/
   }
-    return xhr.responseText;
+    console.log(xhr.responseText);
     }
 }
