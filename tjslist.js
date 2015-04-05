@@ -64,7 +64,7 @@ function createCSV(content) {
  	}
     var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
-    console.log(conten);
+    console.log(content);
 
 
 
