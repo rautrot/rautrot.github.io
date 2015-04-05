@@ -20,20 +20,17 @@ $(function() {
     alert('このブラウザには対応していません');
   }
 
-  $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
-    loadList("tjslist.csv");
-  }
 );
 });
 
 //csvを読み込み他の関数に渡す
-function loadList(fileName) {
+function loadList(fileName, files) {
   var xhr = new XMLHttpRequest();
 
 
   xhr.onreadystatechange = function(){
     if(xhr.readyState === 4 && xhr.status === 200){
-      serch(xhr.responseText);
+      serch(xhr.responseText, files);
     }
   }
   xhr.open("GET", fileName, true);
@@ -43,11 +40,11 @@ function loadList(fileName) {
 
 
 //リストと比較して頻度を求め，他の関数に渡す
-function serch(list){
+function serch(list, files){
   var arr = list.split("\n");
 
   // 検索処理
-
+  console.log(files[0].name);
 
 
 
