@@ -33,7 +33,7 @@ function serch(){
 	createCSV("download",data); // dataは頻度のリストを格納した二次元配列
 }
 
-//tjslist.csvを読み込み，配列として返す関数
+//tjslist.csvを読み込み，配列として返す関数 こっちはダメ
 function loadList(){
 	var xhr = new XMLHttpRequest();
 	fileName = 'tjslist.csv';
@@ -67,8 +67,8 @@ function createCSV(id, content) {
 
 
 
-    loadCSV("tjslist.csv");
-
+    var ddd = loadCSV("tjslist.csv");
+    console.log(ddd);
 
 
 
@@ -103,7 +103,7 @@ function loadCSV(fileName, column) {
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      console.log(xhr.responseText);
+      return xhr.responseText;
     	}
     }
       xhr.open("GET", fileName, true);
