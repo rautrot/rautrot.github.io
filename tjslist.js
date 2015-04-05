@@ -94,17 +94,17 @@ function createCSV(arr) {
 
 document.getElementById("files").addEventListener('change',function(evt){
   var file = evt.target.files;
-  var reader = new FileReader();
+  /*var reader = new FileReader();
   reader.readAsText(file[0],'UTF-8');
   if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
-    reader.onload = function(){
-      console.log(file[0]);
-      console.log(file[1]);
-    }
-  }
-  else{
-    console.log('Second file is not selected!');
-  }
+  reader.onload = function(){
+  console.log(file[0]);
+  console.log(file[1]);
+}
+}
+else{
+console.log('Second file is not selected!');
+}*/
 
 },false);
 
