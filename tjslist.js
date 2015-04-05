@@ -126,7 +126,7 @@ var listData = [
 
 function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", fileName, false);
+    xhr.open("GET", fileName, true);
     xhr.send(null);
     
     xhr.onreadystatechange = function(){
