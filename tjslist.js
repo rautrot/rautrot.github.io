@@ -41,23 +41,12 @@ function loadList(fileName) {
 }
 
 
+
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list){
   var arr = list.split("\n");
 
   // 検索処理
-  var file = evt.target.files;
-  var reader = new FileReader();
-  reader.readAsText(file[0],'UTF-8');
-  if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
-    reader.onload = function(ev){
-      console.log(file[0]);
-      console.log(file[1]);
-    }
-  }
-  else{
-    console.log('Second file is not selected!');
-  }
 
 
 
@@ -103,4 +92,20 @@ function createCSV(arr) {
   window.URL = window.URL || window.webkitURL;
   $("#download").attr("href", window.URL.createObjectURL(blob));
   $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
+}
+
+document.getElementById("files").addEventListener('change',function(evt){
+  var file = evt.target.files;
+  var reader = new FileReader();
+  reader.readAsText(file[0],'UTF-8');
+  if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
+    reader.onload = function(){
+      console.log(file[0]);
+      console.log(file[1]);
+    }
+  }
+  else{
+    console.log('Second file is not selected!');
+  }
+
 }
