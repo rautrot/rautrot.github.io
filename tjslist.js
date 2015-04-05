@@ -68,7 +68,7 @@ function createCSV(id, content) {
 
 
 
-    console.log(loadCSV("tjslist.csv"));
+    loadCSV("tjslist.csv");
 
 
 
@@ -102,7 +102,6 @@ function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", fileName, true);
     xhr.send(null);
-    var csv = '';
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
