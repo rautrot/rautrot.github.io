@@ -1,29 +1,29 @@
 /*
-  loadList()は実装済み
-	createCSV()は実装済み（細かい変更必須）
+loadList()は実装済み
+createCSV()は実装済み（細かい変更必須）
 
-	serch()は未実装
-
-
+serch()は未実装
 
 
 
-	undefined === null
+
+
+undefined === null
 */
 
 //htmlの読み込みの終了時に動作する関数
 $(function() {
 
-    if (typeof Blob !== "undefined") {
-        // alert('このブラウザに対応しています');
-    } else {
-        alert('このブラウザには対応していません');
-    }
+  if (typeof Blob !== "undefined") {
+    // alert('このブラウザに対応しています');
+  } else {
+    alert('このブラウザには対応していません');
+  }
 
-    $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
- 	      loadList("tjslist.csv");
- 		}
-    );
+  $("#export").click(function(){ // function()じゃないとclickイベントが自動で起こる
+    loadList("tjslist.csv");
+  }
+);
 });
 
 //csvを読み込み他の関数に渡す
@@ -43,49 +43,64 @@ function loadList(fileName) {
 
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list){
-	var arr = [ [] ];
+  var arr = list.split("\n");
 
   // 検索処理
+  var file = evt.target.files;
+  var reader = new FileReader();
+  reader.readAsText(file[0],'UTF-8');
+  if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
+    reader.onload = function(ev){
+      console.log(file[0]);
+      console.log(file[1]);
+    }
+  }
+  else{
+    console.log('Second file is not selected!');
+  }
+
+
+
+  for(var i = 0;file[i] != null;i++){
+
+  }
+
+
+
+
+
+
 
   arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]; //動作確認用
   createCSV(arr); //arrは最終的な二次元配列
 }
 
+//配列を一列増やす関数
+function addLine(array){
+  var i = 0;
+  while(array[i] != null){
+    array[i].push(0);
+    i++;
+  }
+}
+
+
 //csvファイルを作成する関数
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
- // 指定されたデータを保持するBlobを作成する。
- 	while(arr[i] != null){
- 		tmp += arr[i].toString() + '\n';
- 		i++;
- 	}
-    var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
+  // 指定されたデータを保持するBlobを作成する。
+  while(arr[i] != null){
+    tmp += arr[i].toString() + '\n';
+    i++;
+  }
+  var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
-    console.log(tmp);
-
-
-
- // Aタグのhref属性にBlobオブジェクトを設定し、リンクを生成
-    window.URL = window.URL || window.webkitURL;
-    $("#download").attr("href", window.URL.createObjectURL(blob));
-    $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
-}
+  console.log(tmp);
 
 
-function onInitFs(fs){
-	/*
-	var file = evt.target.files;
-	var reader = new FileReader();
-	reader.readAsText(file[0],'UTF-8');
-	if(file[1] != null){  //file[i]ではi番のファイルの有無をnullかどうかで確認できる
-		reader.onload = function(ev){
-			console.log(file[0]);
-			console.log(file[1]);
-		}
-	}
-	else{
-		console.log('Second file is not selected!');
-	}
-	*/
+  // Aタグのhref属性にBlobオブジェクトを設定し、リンクを生成
+  window.URL = window.URL || window.webkitURL;
+  $("#download").attr("href", window.URL.createObjectURL(blob));
+  $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
 }
