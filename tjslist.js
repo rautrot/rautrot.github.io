@@ -30,7 +30,7 @@ function serch(){
 	var data = [ [] ];
 
 
-	loadCSV(); // dataは頻度のリストを格納した二次元配列
+	loadCSV("tjslist.csv"); // dataは頻度のリストを格納した二次元配列
 }
 
 //tjslist.csvを読み込み，配列として返す関数 こっちはダメ
