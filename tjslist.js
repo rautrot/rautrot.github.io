@@ -128,7 +128,7 @@ function loadCSV(fileName, column) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", fileName, true);
     xhr.send(null);
-    xhr.onload = fucntion(){
+    xhr.onload = function(){
     
     var csv = xhr.responseText;
     /*for (var i = 0; i < csv.length; i++) {
