@@ -131,7 +131,7 @@ function loadCSV(fileName, column) {
     
     xhr.onreadystatechange = function(){
     
-    	if(xhr.readyState === 5 && xhr.status === 200){
+    	if(xhr.readyState === 4 && xhr.status === 200){
     	var csv = xhr.responseText;
     	console.log(csv);
     	return csv;
