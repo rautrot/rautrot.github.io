@@ -30,7 +30,7 @@ function serch(){
 	var data = [ [] ];
 
 
-	createCSV("download",data); // dataは頻度のリストを格納した二次元配列
+	loadCSV(); // dataは頻度のリストを格納した二次元配列
 }
 
 //tjslist.csvを読み込み，配列として返す関数 こっちはダメ
@@ -51,7 +51,7 @@ function loadList(){
 
 
 
-function createCSV(id, content) {
+function createCSV(content) {
 
  // 指定されたデータを保持するBlobを作成する。
  	var arr = [['abc',2,3],[4,5,6],[7,8,9]];
@@ -64,18 +64,14 @@ function createCSV(id, content) {
  	}
     var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
-
-
-
-    var ddd = loadCSV("tjslist.csv");
-    console.log(ddd);
+    console.log(conten);
 
 
 
  // Aタグのhref属性にBlobオブジェクトを設定し、リンクを生成
     window.URL = window.URL || window.webkitURL;
-    $("#" + id).attr("href", window.URL.createObjectURL(blob));
-    $("#" + id).attr("download", "tjslist.txt"); //ファイル名の指定
+    $("#download").attr("href", window.URL.createObjectURL(blob));
+    $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
 }
 
 
@@ -103,7 +99,7 @@ function loadCSV(fileName, column) {
 
     xhr.onreadystatechange = function(){
     	if(xhr.readyState === 4 && xhr.status === 200){
-      return xhr.responseText;
+      createCSV(xhr.responseText);
     	}
     }
       xhr.open("GET", fileName, true);
