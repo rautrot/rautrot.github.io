@@ -104,7 +104,6 @@ function serch(list, files){
 
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
-            console.log(";akdf;alfj;as");
             k++;
             while(0){
               if(chr.charAt(k) === "\""){
