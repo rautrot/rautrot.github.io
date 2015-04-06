@@ -97,7 +97,9 @@ function serch(list, files){
     reader.addEventListener("load", function (e) {
       chr = reader.result;
 
-      for (var j = 0;j < arr.length;j++){
+      for (var j = 1;j < arr.length;j++){
+        //属性と空白行は飛ばす
+        if(arr[j][0] === "" || arr[j-1][0] === "")continue;
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;k < chr.length;k++){
 
