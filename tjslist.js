@@ -102,16 +102,17 @@ function serch(list, files){
         //tjsファイルに一文字ずつアクセス
         for(var k = 1;k < chr.length;k++){
 
-/*
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
+            console.log(";akdf;alfj;as");
             k++;
             while(){
               if(chr.charAt(k) === "\""){
+                console.log("2つめ！");
                 if(chr.charAt(k-1) !== "\\")break;
               }
               k++;
-          }*/
+          }
 
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
