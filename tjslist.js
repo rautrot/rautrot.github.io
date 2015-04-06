@@ -124,7 +124,8 @@ createCSV(arr); //arrは最終的な二次元配列
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
-  console.log(arr);
+  console.log(arr[0]);
+  console.log(arr[0].toString());
   // 指定されたデータを保持するBlobを作成する。
   while(arr[i] !== null){
     tmp += arr[i].toString() + '\n';
