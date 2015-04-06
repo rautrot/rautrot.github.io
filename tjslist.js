@@ -96,13 +96,13 @@ function serch(list, files){
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
 
-    console.log(chr.charAt(0));
+    console.log(chr;
     for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
 
           //tjsファイル内に同じ文字列があったらインクリメント
-          if(arr[j][0].charAt(0) === chr.charAt(lk)){
+          if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
             for(var m=0;arr[j][0].charAt(m) !== '\n';m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
