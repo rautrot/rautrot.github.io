@@ -49,7 +49,7 @@ function addLine(array){
 function test(){
   var arra = [[1],[2],[3]];
   console.log(arra);
-  arra.unshift([]);
+  arra.unshift(['']);
   console.log(arra);
 }
 
