@@ -147,7 +147,7 @@ function serch(list, files){
       for(var i = 1;i < arr.length;i++){
         if(arr[i] == "" || arr[i-1] == "")continue;
         for(var j = 2;j < arr[i].length;j++){
-          console.log(arr[i][j-1]);
+          console.log(arr[i][j]);
           arr[i][1] += arr[i][j];
         }
       }
