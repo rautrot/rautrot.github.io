@@ -52,14 +52,12 @@ function addLine(arr){
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
   var tmp = list.split('\n');
+
+  //２次元配列の用意
   var arr = [];
   for(var i = 0;i < tmp.length; i++){
     arr[i] = new Array(tmp[i]);
   }
-  //arrにsum用の列を加える
-  //addLine(arr);
-  console.log(arr.length);
-  console.log(arr);
   for(var i = 0;i < arr.length; i++){
     arr[i].push(0);
   }
@@ -129,7 +127,7 @@ function createCSV(arr) {
   var tmp ='';
   // 指定されたデータを保持するBlobを作成する。
   while(arr[i] !== null){
-    tmp += arr[i].toString() + '\n';
+    tmp += arr[i]->toString() + '\n';
     i++;
   }
   var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
