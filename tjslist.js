@@ -44,7 +44,7 @@ function addLine(array){
   var i = 0;
   while(i < array.lenngth){
     array[i].push(0);
-    console.log(arrray[i]);
+    console.log(array[i]);
     i++;
   }
 }
