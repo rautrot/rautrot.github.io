@@ -86,7 +86,7 @@ function serch(list, files){
   for(var i = 0;files[i] !== null;i++){
   //列を一列増やす
   for(var n = 0;n < arr.length; n++){
-    arr[i].push(0);
+    arr[n].push(0);
   }
   //ファイル名の追加
   arr[0].push(files[i].name);
