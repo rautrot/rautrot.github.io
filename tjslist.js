@@ -126,7 +126,7 @@ function serch(list, files){
           }
 
           //tjsファイル内に同じ文字列があったらインクリメント
-          if(arr[j][0].charAt(0) === chr.charAt(k) && quoat !== true && comment != true){
+          if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
             for(var m=0;m < arr[j][0].length;m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
