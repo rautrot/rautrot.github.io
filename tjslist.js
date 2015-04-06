@@ -40,11 +40,11 @@ function loadList(fileName, files) {
 }
 
 //配列を一列増やす関数
-function addLine(array){
+function addLine(arr){
   var i = 0;
-  while(i < array.lenngth){
-    array[i].push(0);
-    console.log(array[i]);
+  while(i < arr.lenngth){
+    arr[i].push(0);
+    console.log(arr[i]);
     i++;
   }
 }
