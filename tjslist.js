@@ -27,7 +27,6 @@ $(function() {
 
 //csvを読み込み他の関数に渡す
 function loadList(fileName, files) {
-  console.log(";lakjfkas;dfsa");
   var xhr = new XMLHttpRequest();
 
   xhr.open("GET", fileName, true);
