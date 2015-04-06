@@ -63,46 +63,48 @@ function serch(list, files){
   「var変数(空白or=で判定)の中にある項などを見つけ次第デクリメント」
   */
   //選択された全ファイルを処理する
+
+  /*
   for(var i = 0;files[i] !== null;i++){
-    //配列にファイル名の追加
-    addLine(arr);
-    arr[0].push(files[i].name);
+  //配列にファイル名の追加
+  addLine(arr);
+  arr[0].push(files[i].name);
 
-    chr = reader.readAsText(files[i],'UTF-8');
-    for (var j = 0;arr[j] !== null;j++){
+  chr = reader.readAsText(files[i],'UTF-8');
+  for (var j = 0;arr[j] !== null;j++){
 
-      //arrの一要素に一文字ずつアクセス
-      for(var k = 0;arr[j].charAt(k) !== '\n';k++){
-        //tjsファイルに一文字ずつアクセス
-        for(var l = 0;chr.charAt(l) !== null;l++){
+  //arrの一要素に一文字ずつアクセス
+  for(var k = 0;arr[j].charAt(k) !== '\n';k++){
+  //tjsファイルに一文字ずつアクセス
+  for(var l = 0;chr.charAt(l) !== null;l++){
 
-          //tjsファイル内に同じ文字列があったらインクリメント
-          if(arr[j].charAt(k) === chr.charAt(l)){
-            jud = true;
-            for(var m=0;arr[j+m] !== '\n';m++){
-              if(arr[j].charAt(k+m) !== chr.charAt(l+m)){
-                jud = false;
-              }
-            }
-            if(jud === true){
-              arr[j][i+2]++;
-            }
-          }
-        }
-      }
-    }
-  }
+  //tjsファイル内に同じ文字列があったらインクリメント
+  if(arr[j].charAt(k) === chr.charAt(l)){
+  jud = true;
+  for(var m=0;arr[j+m] !== '\n';m++){
+  if(arr[j].charAt(k+m) !== chr.charAt(l+m)){
+  jud = false;
+}
+}
+if(jud === true){
+arr[j][i+2]++;
+}
+}
+}
+}
+}
+}
 
+*/
 
-
-  createCSV(arr); //arrは最終的な二次元配列
+createCSV(arr); //arrは最終的な二次元配列
 }
 
 //配列を一列増やす関数
 function addLine(array){
   var i = 0;
   while(array[i] != null){
-    array[i].push(0);
+    //array[i].push(0);
     i++;
   }
 }
