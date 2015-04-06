@@ -92,12 +92,11 @@ function serch(list, files){
     //arr[0].push(fileName);
 
     //ファイルの中身を引き出し，chrに格納
-    var fil = document.querySelector("#file").files[i];
-    reader.readAsText(fil,'UTF-8');
+    reader.readAsText(files,'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
 
-      alert(chr);
+      alert(chr.charAt(3));
       /*
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
