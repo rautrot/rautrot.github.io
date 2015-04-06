@@ -85,39 +85,32 @@ function serch(list, files){
   
   for(var i = 0;files[i] !== null;i++){
   //列を一列増やす
-  for(var n = 0;n < arr.length; n++){
-    arr[n].push(0);
-  }
-  //ファイル名の追加
-  arr[0].push(files[i].name);
+    for(var n = 0;n < arr.length; n++){
+      arr[n].push(0);
+    }
+    //ファイル名の追加
+    arr[0].push(files[i].name);
 
-  chr = reader.readAsText(files[i],'UTF-8');
-  for (var j = 0;arr[j] !== null;j++){
+    chr = reader.readAsText(files[i],'UTF-8');
+    for (var j = 0;arr[j] !== null;j++){
+        //tjsファイルに一文字ずつアクセス
+        for(var k = 0;chr.charAt(k) !== null;k++){
 
-    //arrの一要素に一文字ずつアクセス
-    for(var k = 0;arr[j].charAt(k) !== '\n';k++){
-      //tjsファイルに一文字ずつアクセス
-      for(var l = 0;chr.charAt(l) !== null;l++){
-
-        //tjsファイル内に同じ文字列があったらインクリメント
-        if(arr[j].charAt(k) === chr.charAt(l)){
-          jud = true;
-          for(var m=0;arr[j+m] !== '\n';m++){
-            if(arr[j].charAt(k+m) !== chr.charAt(l+m)){
-              jud = false;
+          //tjsファイル内に同じ文字列があったらインクリメント
+          if(arr[j][0].charAt(0) === chr.charAt(lk){
+            jud = true;
+            for(var m=0;arr[j][0].charAt(m) !== '\n';m++){
+              if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
+                jud = false;
+              }
+            }
+            if(jud === true){
+              arr[j][i+2]++;
             }
           }
-          if(jud === true){
-            arr[j][i+2]++;
-          }
         }
-      }
     }
   }
-}
-
-
-
 createCSV(arr); //arrは最終的な二次元配列
 }
 
