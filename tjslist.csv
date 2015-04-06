@@ -2,9 +2,6 @@
 @set
 @if~@endif
 
-変数
-var
-
 項
 true
 false
@@ -225,3 +222,6 @@ rightContext
 lastMatch
 lastParen
 RegExp.last
+
+変数
+var
