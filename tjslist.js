@@ -102,6 +102,7 @@ function serch(list, files){
         //tjsファイルに一文字ずつアクセス
         for(var k = 1;k < chr.length;k++){
 
+/*
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
             k++;
@@ -110,7 +111,7 @@ function serch(list, files){
                 if(chr.charAt(k-1) !== "\\")break;
               }
               k++;
-          }
+          }*/
 
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
