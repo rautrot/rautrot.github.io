@@ -23,14 +23,7 @@ $(function() {
 
 });
 
-//配列を一列増やす関数
-function addLine(array){
-  var i = 0;
-  while(array[i] != null){
-    array[i].push(0);
-    i++;
-  }
-}
+
 
 //csvを読み込み他の関数に渡す
 function loadList(fileName, files) {
@@ -105,7 +98,14 @@ function serch(list, files){
   createCSV(arr); //arrは最終的な二次元配列
 }
 
-
+//配列を一列増やす関数
+function addLine(array){
+  var i = 0;
+  while(array[i] != null){
+    array[i].push(0);
+    i++;
+  }
+}
 
 
 //csvファイルを作成する関数
