@@ -145,10 +145,15 @@ function serch(list, files){
       }
       
       //sumationを計算
+        for(var i = 0;i < arr.length;i++){
+    tmp += (arr[i].toString() + '\n');
+  }
+  console.log(tmp);
+
       for(var i = 1;i < arr.length;i++){
         if(arr[i][0] == "" || arr[i-1][0] == "")continue;
         for(var j = 2;j < arr[i].length;j++){
-          console.log(arr[i][2]);
+          console.log(arr[i][0]);
           arr[i][1] += arr[i][j];
         }
       }
@@ -194,9 +199,9 @@ function createCSV(arr) {
   for(var i = 0;i < arr.length;i++){
     tmp += (arr[i].toString() + '\n');
   }
-  var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
-
   console.log(tmp);
+
+  var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
 
   // Aタグのhref属性にBlobオブジェクトを設定し、リンクを生成
