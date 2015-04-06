@@ -91,18 +91,19 @@ function serch(list, files){
     console.log(i);
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
+    console.log(i);
     reader.addEventListener("load", function (e) {
+    console.log(i);
       chr = reader.result;
     console.log(i);
 
       for (var j = 1;j < arr.length;j++){
         //属性と空白行は飛ばす
         if(arr[j][0] === "" || arr[j-1][0] === "")continue;
-    console.log(i);
+
         //tjsファイルに一文字ずつアクセス
         for(var k = 1;k < chr.length;k++){
 
-    console.log(i);
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
             k++;
