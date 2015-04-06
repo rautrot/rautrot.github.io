@@ -113,7 +113,7 @@ function serch(list, files){
               }
               k++;
           }
-
+}
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
             if(chr.charAt(k+1) === "/"){
