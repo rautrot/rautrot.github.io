@@ -108,7 +108,7 @@ function serch(list, files){
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
             console.log("tjsファイル内に同じ文字列があったらインクリメント");
-            for(var m=0;arr[j][0].charAt(m) !== null;m++){
+            for(var m=0;m < arr[j][0].length;m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
                 jud = false;
               }
