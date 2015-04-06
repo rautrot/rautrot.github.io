@@ -51,7 +51,11 @@ function addLine(arr){
 
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
-  var arr = list.split('\n');
+  var tmp = list.split('\n');
+  var arr = [];
+  for(var i = 0;i < tmp.length; i++){
+    arr[i] = new Array(tmp[i]);
+  }
   //arrにsum用の列を加える
   //addLine(arr);
   console.log(arr.length);
