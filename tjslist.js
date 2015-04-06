@@ -84,7 +84,7 @@ function serch(list, files){
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
     arr[n].push(parseInt("0"));
-
+    console.log(arr[n][2]);
   }
     //ファイル名の追加
 
@@ -108,8 +108,8 @@ function serch(list, files){
                 if(chr.charAt(k-1) !== "\\")break;
               }
               k++;
+            }
           }
-}
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
             if(chr.charAt(k+1) === "/"){
@@ -149,9 +149,9 @@ function serch(list, files){
       
       //sumationを計算
       var tmp = "";
-        for(var i = 0;i < arr.length;i++){
-          tmp += (arr[i].toString() + '\n');
-        }
+      for(var i = 0;i < arr.length;i++){
+        tmp += (arr[i].toString() + '\n');
+      }
       console.log(tmp);
 
       for(var i = 1;i < arr.length;i++){
@@ -182,7 +182,7 @@ function serch(list, files){
           num = i;
         }
       }
-*/
+      */
 
 createCSV(arr); //arrは最終的な二次元配列
 });
