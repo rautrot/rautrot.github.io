@@ -114,6 +114,7 @@ function serch(list, files){
               for(k;chr.charAt(k) !== "\n";k++);
             }else if(chr.charAt(k+1) === "*"){
               //ネストの数を確認する
+              k++;
               var cnt = 1;
               for(k;cnt !== 0;k++){
                 if(chr.charAt(k) === "/" && chr.charAt(k+1) === "*"){
