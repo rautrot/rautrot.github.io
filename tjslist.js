@@ -92,7 +92,7 @@ function serch(list, files){
     //arr[0].push(fileName);
 
     //ファイルの中身を引き出し，chrに格納
-    reader.readAsText(files[0],'UTF-8');
+    reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
 
