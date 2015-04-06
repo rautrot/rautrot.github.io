@@ -143,6 +143,7 @@ function serch(list, files){
           }
         }
       }
+      /*
       //sumationを計算
       for(var i = 1;i < arr.length;i++){
         if(arr[i] == "" || arr[i-1] == "")continue;
@@ -150,7 +151,7 @@ function serch(list, files){
           console.log(arr[i][j]);
           arr[i][1] += arr[i][j];
         }
-      }
+      }*/
 
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
