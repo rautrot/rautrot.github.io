@@ -97,7 +97,6 @@ function serch(list, files){
       chr = reader.result;
 
       alert(chr);
-      /*
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
@@ -115,7 +114,7 @@ function serch(list, files){
             }
           }
         }
-      }*/
+      }
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
