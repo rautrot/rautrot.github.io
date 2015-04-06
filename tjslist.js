@@ -95,7 +95,7 @@ function serch(list, files){
     reader.addEventListener("load", function (e) {
       chr = reader.result;
 
-      console.log(chr);
+      alert(chr);
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
