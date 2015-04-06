@@ -105,7 +105,11 @@ function serch(list, files){
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
             k++;
-            for(k;chr.charAt(k) !== "\"" && chr.charAt(k-1) !== "\\";k++);
+            while(){
+              if(chr.charAt(k) === "\""){
+                if(chr.charAt(k-1) !== "\\")break;
+              }
+              k++;
           }
 
           //コメント内をスキップする処理
