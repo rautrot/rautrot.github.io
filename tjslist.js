@@ -104,6 +104,7 @@ function serch(list, files){
 
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
+            k++;
             for(k;chr.charAt(k) !== "\"" && chr.charAt(k-1) !== "\\";k++);
           }
 
@@ -124,6 +125,7 @@ function serch(list, files){
               }
             }
           }
+
 
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
