@@ -59,7 +59,7 @@ function serch(list, files){
   for(var i = 0;i < tmp.length; i++){
     arr[i] = new Array(tmp[i]);
   }
-  for(var i = 0;i < arr.length; i++){
+  for(var i = 1;i < arr.length; i++){
     if(arr[i][0] === "" || arr[i-1][0] === "")continue;
     arr[i].push(0);
   }
