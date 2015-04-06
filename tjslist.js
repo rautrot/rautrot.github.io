@@ -46,21 +46,18 @@ function addLine(array){
   }
 }
 
-function test(){
-  var arra = [[1],[2],[3]];
-  console.log(arra);
-  arra.unshift(['']);
-  console.log(arra);
-}
-
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
   var arr = list.split("\n");
   //arrにsum用の列を加える
+  addLine(arr);
+  //ファイル名などを記述する行を追加
+  arr.unshift(['','Sumation']);
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
-  var reader = new FileReader();
+  var reader = var new FileReader();
+
   // 検索処理
   console.log(files[0].name);
 
@@ -72,6 +69,10 @@ function serch(list, files){
   */
   //選択された全ファイルを処理する
   for(var i = 0;file[i] !== null;i++){
+    //配列にファイル名の追加
+    addLine(arr);
+    arr[0].push(file[i].name);
+
     chr = reader.readAsText(files[i],'UTF-8');
     for (var j = 0;arr[j] !== null;j++){
 
@@ -89,14 +90,14 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              arr[j][i+1]++;
+              arr[j][i+2]++;
             }
           }
         }
       }
     }
   }
-
+}
 
 
 
