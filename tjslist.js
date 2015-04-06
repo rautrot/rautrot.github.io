@@ -71,7 +71,6 @@ function serch(list, files){
   var jud = true; //比較判定用
   var reader = new FileReader();
   // 検索処理
-  console.log(files[0].name);
 
   /*
   検索の仕方
@@ -88,6 +87,8 @@ function serch(list, files){
     arr[n].push(0);
   }
     //ファイル名の追加
+
+    console.log(files[i].name);
     arr[0].push(files[i].name);
 
     //ファイルの中身を引き出し，chrに格納
