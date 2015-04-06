@@ -106,7 +106,7 @@ function serch(list, files){
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
             console.log(";akdf;alfj;as");
             k++;
-            while(){
+            while(0){
               if(chr.charAt(k) === "\""){
                 console.log("2つめ！");
                 if(chr.charAt(k-1) !== "\\")break;
