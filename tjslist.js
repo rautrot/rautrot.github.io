@@ -137,7 +137,9 @@ function serch(list, files){
               }
             }
             if(jud === true){
+              console.log(arr[j][i-1]);
               arr[j][i+1]++;
+              console.log(arr[j][i]);
             }
           }
         }
