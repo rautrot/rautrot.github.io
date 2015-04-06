@@ -50,7 +50,7 @@ function addLine(array){
 function serch(list, files){
   var arr = list.split("\n");
   //arrにsum用の列を加える
-  addLine(arr);
+  //addLine(arr);
   //ファイル名などを記述する行を追加
   arr.unshift(['','Sumation']);
 
