@@ -88,8 +88,8 @@ function serch(list, files){
   }
     //ファイル名の追加
 
-    var fileName = files[i].name;
-    arr[0].push(fileName);
+    console.log(files);
+    //arr[0].push(fileName);
 
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
@@ -97,6 +97,7 @@ function serch(list, files){
       chr = reader.result;
 
       alert(chr);
+      /*
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
@@ -114,7 +115,7 @@ function serch(list, files){
             }
           }
         }
-      }
+      }*/
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
