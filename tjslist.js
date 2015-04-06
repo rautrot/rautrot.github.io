@@ -96,6 +96,8 @@ function serch(list, files){
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
 
+    chr = reader.result;
+
     console.log(chr);
     for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
