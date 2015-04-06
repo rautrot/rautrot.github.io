@@ -27,14 +27,14 @@ $(function() {
 function loadList(fileName, files) {
   var xhr = new XMLHttpRequest();
 
+  xhr.open("GET", fileName, true);
+  xhr.send(null);
 
   xhr.onreadystatechange = function(){
     if(xhr.readyState === 4 && xhr.status === 200){
       serch(xhr.responseText, files);
     }
   }
-  xhr.open("GET", fileName, true);
-  xhr.send(null);
 }
 
 //配列を一列増やす関数
