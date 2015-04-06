@@ -44,6 +44,7 @@ function loadList(fileName, files) {
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
   var arr = list.split("\n");
+  console.log(";lakjfkas;dfsa");
   //arrにsum用の列を加える
   addLine(arr);
   //ファイル名などを記述する行を追加
