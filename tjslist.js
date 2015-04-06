@@ -89,7 +89,7 @@ function serch(list, files){
     //ファイル名の追加
 
     console.log(files[i].name);
-    arr[0].push(files[i].name);
+    arr[0].push(files[i].name.toString());
 
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
