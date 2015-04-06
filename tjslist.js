@@ -146,6 +146,7 @@ function serch(list, files){
           }
         }
       }
+      console.log(arr);
       //sumationを計算
       for(var i = 1;i < arr.length;i++){
         if(arr[i] == "" || arr[i-1] == "")continue;
@@ -153,7 +154,6 @@ function serch(list, files){
           arr[i][1] += arr[i][j];
         }
       }
-      console.log(arr);
 
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
