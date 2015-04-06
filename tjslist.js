@@ -70,9 +70,6 @@ function serch(list, files){
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
   var reader = new FileReader();
-  reader.onload = function(){
-    chr = reader.result;
-  }
   // 検索処理
   console.log(files[0].name);
 
@@ -95,11 +92,11 @@ function serch(list, files){
 
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
+    reader.addEventListener("load", function (e) {
+      chr = reader.result;
 
-    chr = reader.result;
-
-    console.log(chr);
-    for (var j = 0;arr[j] !== null;j++){
+      console.log(chr);
+      for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
 
@@ -120,7 +117,7 @@ function serch(list, files){
     }
 createCSV(arr); //arrは最終的な二次元配列
 }
-
+}
 
 
 
