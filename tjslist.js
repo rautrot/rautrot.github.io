@@ -63,8 +63,6 @@ function serch(list, files){
     if(arr[i][0] === "" || arr[i-1][0] === "")continue;
     arr[i].push(0);
   }
-  console.log(arr);
-
   //ファイル名などを記述する行を追加
   arr.unshift(["","Sumation"]);
 
@@ -89,7 +87,6 @@ function serch(list, files){
   }
     //ファイル名の追加
 
-    console.log(files);
     arr[0].push(files[i].name);
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
@@ -150,7 +147,7 @@ function serch(list, files){
       for(var i = 1;i < arr.length;i++){
         if(arr[i] == "" || arr[i-1] == "")continue;
         for(var j = 2;j < arr[i].length;j++){
-          console.log(arr[i][j]);
+          console.log(arr[i][j-1]);
           arr[i][1] += arr[i][j];
         }
       }
