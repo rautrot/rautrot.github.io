@@ -68,10 +68,10 @@ function serch(list, files){
   「var変数(空白or=で判定)の中にある項などを見つけ次第デクリメント」
   */
   //選択された全ファイルを処理する
-  for(var i = 0;file[i] !== null;i++){
+  for(var i = 0;files[i] !== null;i++){
     //配列にファイル名の追加
-    //addLine(arr);
-    arr[0].push(file[i].name);
+    addLine(arr);
+    arr[0].push(files[i].name);
 
     chr = reader.readAsText(files[i],'UTF-8');
     for (var j = 0;arr[j] !== null;j++){
