@@ -23,6 +23,15 @@ $(function() {
 
 });
 
+//配列を一列増やす関数
+function addLine(array){
+  var i = 0;
+  while(array[i] != null){
+    array[i].push(0);
+    i++;
+  }
+}
+
 //csvを読み込み他の関数に渡す
 function loadList(fileName, files) {
   var xhr = new XMLHttpRequest();
@@ -37,20 +46,13 @@ function loadList(fileName, files) {
   }
 }
 
-//配列を一列増やす関数
-function addLine(array){
-  var i = 0;
-  while(array[i] != null){
-    array[i].push(0);
-    i++;
-  }
-}
+
 
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
   var arr = list.split("\n");
   //arrにsum用の列を加える
-  //addLine(arr);
+  addLine(arr);
   //ファイル名などを記述する行を追加
   arr.unshift(['','Sumation']);
 
