@@ -83,7 +83,8 @@ function serch(list, files){
   //列を一列増やす
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
-    arr[n].push(0);
+    arr[n].push(parseInt(0));
+
   }
     //ファイル名の追加
 
