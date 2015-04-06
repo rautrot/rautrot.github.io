@@ -1,6 +1,7 @@
 プリプロセッサ
 @set
-@if~@endif
+@if
+@endif
 
 項
 true
@@ -69,13 +70,7 @@ delete
 typeof
 #
 $
-+
--
-&
-*
 instanceof
-(*)
-[*]
 .
 !
 incontextof

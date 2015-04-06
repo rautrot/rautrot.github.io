@@ -146,6 +146,36 @@ function serch(list, files){
           }
         }
       }
+      //sumationを計算
+      for(var i = 1;i < arr.length;i++){
+        if(arr[i] == "" || arr[i-1] == "")continue;
+        for(var j = 2;j < arr[i].length;j++){
+          arr[i][1] += arr[i][j];
+        }
+      }
+
+      //arrを空白行で分けてsortする(バブルソート)
+      var num = 2;
+      for(var i = 2;i < arr.length;i++){
+        if(arr[i][0] === ""){
+          for(var j = num;j < i;j++){
+            for(var k = num;k < i-(j-num)-1;k++){
+              if(arr[k][1] < arr[k+1][1]){
+                var tmpArray;
+                tmpArray = arr[k];
+                arr[k] = arr[k+1];
+                arr[k+1] = tmpArray;
+              }
+
+            }
+          }
+
+          i += 2;
+          num = i;
+        }
+      }
+
+
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
@@ -153,10 +183,14 @@ createCSV(arr); //arrは最終的な二次元配列
 
 
 
+
 //csvファイルを作成する関数
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
+  // ,(カンマ)はcsv形式で扱うため全角に変更
+  arr[23][0] = "，";
+
   // 指定されたデータを保持するBlobを作成する。
   for(var i = 0;i < arr.length;i++){
     tmp += (arr[i].toString() + '\n');
