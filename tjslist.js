@@ -103,7 +103,7 @@ createCSV(arr); //arrは最終的な二次元配列
 //配列を一列増やす関数
 function addLine(array){
   var i = 0;
-  while(array[i] != null){
+  while(i < array.lenngth){
     //array[i].push(0);
     console.log(arrray[i]);
     i++;
@@ -116,7 +116,7 @@ function createCSV(arr) {
   var i = 0;
   var tmp ='';
   // 指定されたデータを保持するBlobを作成する。
-  while(arr[i] != null){
+  while(arr[i] !== null){
     tmp += arr[i].toString() + '\n';
     i++;
   }
