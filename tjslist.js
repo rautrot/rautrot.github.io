@@ -105,7 +105,7 @@ function serch(list, files){
           //クォーテーション内をスキップする処理
           if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
             k++;
-            while(0){
+            while(1){
               if(chr.charAt(k) === "\""){
                 console.log("2つめ！");
                 if(chr.charAt(k-1) !== "\\")break;
