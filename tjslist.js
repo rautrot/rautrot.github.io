@@ -92,6 +92,7 @@ function serch(list, files){
     arr[0].push(files[i].name);
 
     chr = reader.readAsText(files[i],'UTF-8');
+    console.log(chr.charAt(0);
     for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
