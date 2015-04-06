@@ -96,14 +96,10 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
-      for(var ll =0;ll != chr.length;ll++)if(chr.charAt(ll) == "\0")console.log("charAtはnullで終了指定");
-      console.log(chr.length);
-      if(arr[1][7]==null)consol.log("配列はnullで終了指定");
 
-      alert(chr);/*
-      for (var j = 0;arr[j] !== null;j++){
+      for (var j = 0;j < arr.length;j++){
         //tjsファイルに一文字ずつアクセス
-        for(var k = 0;chr.charAt(k) !== null;k++){
+        for(var k = 0;k < chr.length;k++){
 
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
@@ -118,7 +114,7 @@ function serch(list, files){
             }
           }
         }
-      }*/
+      }
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
