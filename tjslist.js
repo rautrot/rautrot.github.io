@@ -113,6 +113,7 @@ function serch(list, files){
             }
             if(jud === true){
               arr[j][i+2]++;
+              console.log("count!!!");
             }
           }
         }
