@@ -113,8 +113,8 @@ function serch(list, files){
               arr[j][i+2]++;
             }
           }
-        }*/
-      }
+        }
+      }*/
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
