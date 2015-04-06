@@ -43,7 +43,7 @@ function loadList(fileName, files) {
 
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
-  var arr = list.split("\n");
+  var arr = list.split('\n');
   //arrにsum用の列を加える
   addLine(arr);
   //ファイル名などを記述する行を追加
@@ -55,6 +55,7 @@ function serch(list, files){
 
   // 検索処理
   console.log(files[0].name);
+  console.log(arr);
 
   /*
   検索の仕方
@@ -117,7 +118,7 @@ function createCSV(arr) {
   var tmp ='';
   // 指定されたデータを保持するBlobを作成する。
   while(arr[i] !== null){
-    tmp += arr[i].toString() + "\n";
+    tmp += arr[i].toString() + '\n';
     i++;
   }
   var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
