@@ -96,15 +96,7 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
-      console.log(chr.charAt(0));
-      console.log(chr.charAt(1));
-      console.log(chr.charAt(2));
-      console.log(chr.charAt(3));
-      console.log(chr.charAt(4));
-      console.log(chr.charAt(5));
-      console.log(chr.charAt(6));
-      console.log(chr.charAt(7));
-      console.log(chr.charAt(8));
+      if(arr[300] == null)console.log("配列の領域外はnull");
 
       alert(chr);/*
       for (var j = 0;arr[j] !== null;j++){
