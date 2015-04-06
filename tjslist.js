@@ -110,7 +110,7 @@ function serch(list, files){
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
             if(chr.charAt(k+1) === "/"){
-              for(k;chr.charAt(k) === "\n";k++);
+              for(k;chr.charAt(k) !== "\n";k++);
             }else if(chr.charAt(k+1) === "*"){
               //ネストの数を確認する
               var cnt = 1;
