@@ -101,11 +101,13 @@ function serch(list, files){
         //属性と空白行は飛ばす
         if(arr[j][0] === "" || arr[j-1][0] === "")continue;
         //tjsファイルに一文字ずつアクセス
+        console.log("tjsファイルに一文字ずつアクセス");
         for(var k = 0;k < chr.length;k++){
 
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
+            console.log("tjsファイル内に同じ文字列があったらインクリメント");
             for(var m=0;arr[j][0].charAt(m) !== null;m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
                 jud = false;
