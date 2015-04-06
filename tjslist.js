@@ -80,6 +80,8 @@ function serch(list, files){
   //選択された全ファイルを処理する
   
   for(var i = 0;i < files.length;i++){
+    console.log(files.length);
+    console.log(i);
   //列を一列増やす
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
@@ -137,9 +139,7 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              console.log(arr[j][i-1]);
               arr[j][i+1]++;
-              console.log(arr[j][i]);
             }
           }
         }
