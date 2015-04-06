@@ -46,7 +46,7 @@ function addLine(array){
   }
 }
 
-test(){
+function test(){
   var arra = [[1],[2],[3]];
   console.log(arra);
   addLine(arra);
