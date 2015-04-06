@@ -54,6 +54,8 @@ function serch(list, files){
   var arr = list.split('\n');
   //arrにsum用の列を加える
   //addLine(arr);
+  console.log(arr.length);
+  console.log(arr);
   for(var i = 0;i < arr.length; i++){
     arr[i].push(0);
   }
