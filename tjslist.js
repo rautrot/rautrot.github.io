@@ -104,7 +104,8 @@ createCSV(arr); //arrは最終的な二次元配列
 function addLine(array){
   var i = 0;
   while(array[i] != null){
-    array.push(0);
+    //array[i].push(0);
+    console.log(arrray[i]);
     i++;
   }
 }
