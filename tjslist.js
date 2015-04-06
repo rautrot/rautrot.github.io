@@ -61,7 +61,7 @@ function serch(list, files){
   }
   for(var i = 1;i < arr.length; i++){
     if(arr[i][0] === "" || arr[i-1][0] === "")continue;
-    arr[i].push(0);
+    arr[i].push(parseInt("0"));
   }
   //ファイル名などを記述する行を追加
   arr.unshift(["","Sumation"]);
@@ -83,7 +83,7 @@ function serch(list, files){
   //列を一列増やす
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
-    arr[n].push(parseInt(0));
+    arr[n].push(parseInt("0"));
 
   }
     //ファイル名の追加
