@@ -114,9 +114,9 @@ function serch(list, files){
           }
         }
       }
-    }
 createCSV(arr); //arrは最終的な二次元配列
 });
+}
 }
 
 
