@@ -39,11 +39,21 @@ function loadList(fileName, files) {
   }
 }
 
+//配列を一列増やす関数
+function addLine(array){
+  var i = 0;
+  while(i < array.lenngth){
+    array[i].push(0);
+    console.log(arrray[i]);
+    i++;
+  }
+}
 
 
 //リストと比較して頻度を求め，他の関数に渡す
 function serch(list, files){
   var arr = list.split('\n');
+  console.log(arr);
   //arrにsum用の列を加える
   addLine(arr);
   //ファイル名などを記述する行を追加
@@ -101,15 +111,7 @@ arr[j][i+2]++;
 createCSV(arr); //arrは最終的な二次元配列
 }
 
-//配列を一列増やす関数
-function addLine(array){
-  var i = 0;
-  while(i < array.lenngth){
-    array[i].push(0);
-    console.log(arrray[i]);
-    i++;
-  }
-}
+
 
 
 //csvファイルを作成する関数
