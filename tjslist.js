@@ -153,6 +153,7 @@ function serch(list, files){
           arr[i][1] += arr[i][j];
         }
       }
+      console.log(arr);
 
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
