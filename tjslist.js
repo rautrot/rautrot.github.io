@@ -107,7 +107,6 @@ function serch(list, files){
             k++;
             while(1){
               if(chr.charAt(k) === "\""){
-                console.log("2つめ！");
                 if(chr.charAt(k-1) !== "\\")break;
               }
               k++;
@@ -143,7 +142,6 @@ function serch(list, files){
             }
             if(jud === true){
               arr[j][i+1]++;
-              console.log("count!!!");
             }
           }
         }
