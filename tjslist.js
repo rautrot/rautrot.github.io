@@ -65,7 +65,7 @@ function serch(list, files){
   console.log(arr);
 
   //ファイル名などを記述する行を追加
-  arr.unshift(['','Sumation']);
+  arr.unshift(["","Sumation"]);
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
