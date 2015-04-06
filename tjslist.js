@@ -96,9 +96,8 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
-      if(arr[300] == null)console.log("配列の領域外はnull");
 
-      alert(chr);/*
+      alert(chr);
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
@@ -106,7 +105,7 @@ function serch(list, files){
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
-            for(var m=0;arr[j][0].charAt(m) !== '\n';m++){
+            for(var m=0;arr[j][0].charAt(m) !== null;m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
                 jud = false;
               }
@@ -116,7 +115,7 @@ function serch(list, files){
             }
           }
         }
-      }*/
+      }
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
