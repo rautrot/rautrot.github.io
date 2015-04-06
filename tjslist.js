@@ -84,7 +84,6 @@ function serch(list, files){
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
     arr[n].push(parseInt("0"));
-    console.log(arr[n][2]);
   }
     //ファイル名の追加
 
@@ -130,6 +129,8 @@ function serch(list, files){
           }
 
 
+    console.log(arr[2][2]);
+
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
@@ -147,6 +148,9 @@ function serch(list, files){
         }
       }
       
+      
+    console.log(arr[2][2]);
+
       //sumationを計算
       var tmp = "";
       for(var i = 0;i < arr.length;i++){
