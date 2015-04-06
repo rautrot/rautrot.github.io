@@ -93,10 +93,12 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
+    console.log(i);
 
       for (var j = 1;j < arr.length;j++){
         //属性と空白行は飛ばす
         if(arr[j][0] === "" || arr[j-1][0] === "")continue;
+    console.log(i);
         //tjsファイルに一文字ずつアクセス
         for(var k = 1;k < chr.length;k++){
 
@@ -112,7 +114,6 @@ function serch(list, files){
             }
           }
 
-    console.log(i);
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
             if(chr.charAt(k+1) === "/"){
@@ -131,7 +132,7 @@ function serch(list, files){
               }
             }
           }
-          
+
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
