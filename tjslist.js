@@ -140,16 +140,13 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              console.log(arr[j][i]);
-              arr[j][i]++;
-              console.log(arr[j][i]);
+              console.log(arr[2][2]);
+              arr[2][2]++;
+              console.log(arr[2][2]);
             }
           }
         }
       }
-      
-      
-    console.log(arr[2][2]);
 
       //sumationを計算
       var tmp = "";
