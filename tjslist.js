@@ -143,7 +143,7 @@ function serch(list, files){
           }
         }
       }
-      /*
+      
       //sumationを計算
       for(var i = 1;i < arr.length;i++){
         if(arr[i] == "" || arr[i-1] == "")continue;
@@ -152,7 +152,7 @@ function serch(list, files){
           arr[i][1] += arr[i][j];
         }
       }
-*/
+/*
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
       for(var i = 2;i < arr.length;i++){
@@ -173,7 +173,7 @@ function serch(list, files){
           num = i;
         }
       }
-
+*/
 
 createCSV(arr); //arrは最終的な二次元配列
 });
