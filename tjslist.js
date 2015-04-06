@@ -104,7 +104,7 @@ createCSV(arr); //arrは最終的な二次元配列
 function addLine(array){
   var i = 0;
   while(i < array.lenngth){
-    //array[i].push(0);
+    array[i].push(0);
     console.log(arrray[i]);
     i++;
   }
@@ -117,7 +117,7 @@ function createCSV(arr) {
   var tmp ='';
   // 指定されたデータを保持するBlobを作成する。
   while(arr[i] !== null){
-    tmp += arr[i].toString() + '\n';
+    tmp += arr[i].toString() + "\n";
     i++;
   }
   var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
