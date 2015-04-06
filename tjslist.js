@@ -80,7 +80,6 @@ function serch(list, files){
   「var変数(空白or=で判定)の中にある項などを見つけ次第デクリメント」
   */
   //選択された全ファイルを処理する
-
   
   for(var i = 0;i < files.length;i++){
   //列を一列増やす
@@ -101,10 +100,33 @@ function serch(list, files){
         //属性と空白行は飛ばす
         if(arr[j][0] === "" || arr[j-1][0] === "")continue;
         //tjsファイルに一文字ずつアクセス
-        for(var k = 0;k < chr.length;k++){
+        for(var k = 1;k < chr.length;k++){
+
+          //クォーテーション内をスキップする処理
+          if(chr.charAt(k) === "\"" && chr.charAt(k-1) !== "\\"){
+            for(k;chr.charAt(k) !== "\"" && chr.charAt(k-1) !== "\\";k++);
+          }
+
+          //コメント内をスキップする処理
+          if(chr.charAt(k) === "/"){
+            if(chr.charAt(k+1) === "/"){
+              for(k;chr.charAt(k) === "\n";k++);
+            }else if(chr.charAt(k+1) === "*"){
+              //ネストの数を確認する
+              var cnt = 1;
+              for(k;cnt !== 0;k++){
+                if(chr.charAt(k) === "/" && chr.charAt(k+1) === "*"){
+                  cnt++;
+                }
+                if(chr.charAt(k-1) === "*" && chr.charAt(k) === "/"){
+                  cnt--;
+                }
+              }
+            }
+          }
 
           //tjsファイル内に同じ文字列があったらインクリメント
-          if(arr[j][0].charAt(0) === chr.charAt(k)){
+          if(arr[j][0].charAt(0) === chr.charAt(k) && quoat !== true && comment != true){
             jud = true;
             for(var m=0;m < arr[j][0].length;m++){
               if(arr[j][0].charAt(m) !== chr.charAt(k+m)){
