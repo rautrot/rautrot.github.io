@@ -137,27 +137,18 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              console.log(i);
-              console.log(arr[2][i+2]);
-              arr[2][2]++;
-              console.log(arr[2][i+2]);
+              arr[j][i+2]++;
             }
           }
         }
       }
 
       //sumationを計算
-      var tmp = "";
-      for(var i = 0;i < arr.length;i++){
-        tmp += (arr[i].toString() + '\n');
-      }
-      console.log(tmp);
-
-      for(var i = 1;i < arr.length;i++){
-        if(arr[i][0] == "" || arr[i-1][0] == "")continue;
-        for(var j = 2;j < arr[i].length;j++){
-          console.log(arr[i][2]);
-          arr[i][1] += arr[i][j];
+      for(var n = 1;n < arr.length;n++){
+        if(arr[n][0] == "" || arr[n-1][0] == "")continue;
+        for(var m = 2;m < arr[n].length;m++){
+          console.log(arr[n][2]);
+          arr[n][1] += arr[n][m];
         }
       }
 /*
