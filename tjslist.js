@@ -56,7 +56,7 @@ function serch(list, files){
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
-  var reader = var new FileReader();
+  var reader = new FileReader();
 
   // 検索処理
   console.log(files[0].name);
@@ -97,19 +97,10 @@ function serch(list, files){
       }
     }
   }
-}
 
 
 
-
-
-
-
-
-
-
-
-createCSV(arr); //arrは最終的な二次元配列
+  createCSV(arr); //arrは最終的な二次元配列
 }
 
 
