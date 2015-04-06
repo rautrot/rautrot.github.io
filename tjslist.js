@@ -52,7 +52,10 @@ function addLine(arr){
 function serch(list, files){
   var arr = list.split('\n');
   //arrにsum用の列を加える
-  addLine(arr);
+  //addLine(arr);
+  for(var i = 0;i < arr.length; i++){
+    arr[i].push(0);
+  }
   console.log(arr);
 
   //ファイル名などを記述する行を追加
