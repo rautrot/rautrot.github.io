@@ -40,12 +40,13 @@ function loadList(fileName, files) {
 }
 
 //配列を一列増やす関数
+/*
 function addLine(arr){
   for(var i = 0;i < arr.length; i++){
     arr[i].push(0);
   }
   console.log(arr);
-}
+}*/
 
 
 //リストと比較して頻度を求め，他の関数に渡す
