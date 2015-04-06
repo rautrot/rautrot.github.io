@@ -81,7 +81,7 @@ function serch(list, files){
   //選択された全ファイルを処理する
 
   
-  for(var i = 0;files[i] !== null;i++){
+  for(var i = 0;i < files.length;i++){
   //列を一列増やす
   for(var n = 0;n < arr.length; n++){
     arr[n].push(0);
@@ -92,7 +92,8 @@ function serch(list, files){
     //arr[0].push(fileName);
 
     //ファイルの中身を引き出し，chrに格納
-    reader.readAsText(files[i],'UTF-8');
+    var fil = document.getElementById("targetTextFiles").files[i];
+    reader.readAsText(fil,'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
 
