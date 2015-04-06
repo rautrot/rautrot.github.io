@@ -137,7 +137,7 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              arr[j][i+2]++;
+              arr[j][i+1]++;
             }
           }
         }
@@ -147,7 +147,7 @@ function serch(list, files){
       for(var n = 1;n < arr.length;n++){
         if(arr[n][0] == "" || arr[n-1][0] == "")continue;
         for(var m = 2;m < arr[n].length;m++){
-          console.log(arr[n][2]);
+          console.log(arr[n][1]);
           arr[n][1] += arr[n][m];
         }
       }
