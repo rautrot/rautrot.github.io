@@ -127,9 +127,8 @@ function createCSV(arr) {
   console.log(arr[0]);
   console.log(arr[0].toString());
   // 指定されたデータを保持するBlobを作成する。
-  while(arr[i] !== null){
-    tmp += arr[i].toString() + '\n';
-    i++;
+  for(var i = 0;i < arr.length;i++){
+    tmp += (arr[i].toString() + '\n');
   }
   var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
 
