@@ -40,11 +40,11 @@ function loadList(fileName, files) {
 }
 
 //配列を一列増やす関数
-function addLine(array){
+function addLine(arra){
   var i = 0;
-  while(i < array.lenngth){
-    array[i].push(0);
-    console.log(arrray[i]);
+  while(i < arra.lenngth){
+    arra[i].push(0);
+    console.log(arra[i]);
     i++;
   }
 }
@@ -56,7 +56,7 @@ function serch(list, files){
   //arrにsum用の列を加える
   addLine(arr);
   //ファイル名などを記述する行を追加
-  arr.unshift(['','Sumation']);
+  arr.unshiftt(['','Sumation']);
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
