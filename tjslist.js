@@ -140,9 +140,9 @@ function serch(list, files){
               }
             }
             if(jud === true){
-              console.log(arr[2][2]);
+              console.log(arr[2][i+2]);
               arr[2][2]++;
-              console.log(arr[2][2]);
+              console.log(arr[2][i+2]);
             }
           }
         }
