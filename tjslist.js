@@ -70,7 +70,7 @@ function serch(list, files){
   //選択された全ファイルを処理する
   for(var i = 0;file[i] !== null;i++){
     //配列にファイル名の追加
-    addLine(arr);
+    //addLine(arr);
     arr[0].push(file[i].name);
 
     chr = reader.readAsText(files[i],'UTF-8');
