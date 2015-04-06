@@ -41,10 +41,8 @@ function loadList(fileName, files) {
 
 //配列を一列増やす関数
 function addLine(arr){
-  var i = 0;
-  while(i < arr.length){
+  for(var i = 0;i < arr.length; i++){
     arr[i].push(0);
-    i++;
   }
   console.log(arr);
 }
