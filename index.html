@@ -8,6 +8,9 @@
 
 	<input type="file" id="selmulti" multiple>
 	<br>
+
+	<input type="button" id="button" value="change Array">
+
 	<a id="download" target="_blank">ダウンロード（IEでは、右クリック＞対象をファイルに保存）</a>
 	<br>
 
@@ -17,6 +20,8 @@
 		obj2.addEventListener("change", function(evt){
 			loadList("tjslist.csv",evt.target.files);
 		},false);
+
+		document.getElementById("button").addEventListener("click",test,false);
 	</script>
 
 </body>

@@ -37,28 +37,6 @@ function loadList(fileName, files) {
   xhr.send(null);
 }
 
-
-
-//リストと比較して頻度を求め，他の関数に渡す
-function serch(list, files){
-  var arr = list.split("\n");
-
-  // 検索処理
-  console.log(files[0].name);
-
-
-
-
-
-
-
-
-
-
-  arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]; //動作確認用
-  createCSV(arr); //arrは最終的な二次元配列
-}
-
 //配列を一列増やす関数
 function addLine(array){
   var i = 0;
@@ -67,6 +45,73 @@ function addLine(array){
     i++;
   }
 }
+
+test(){
+  var arra = [[1],[2],[3]];
+  console.log(arra);
+  addLine(arra);
+  console.log(arra);
+}
+
+//リストと比較して頻度を求め，他の関数に渡す
+function serch(list, files){
+  var arr = list.split("\n");
+  //arrにsum用の列を加える
+
+  var chr = ''; //データ格納用
+  var jud = true; //比較判定用
+  var reader = var new FileReader();
+  // 検索処理
+  console.log(files[0].name);
+
+  /*
+  検索の仕方
+  「""('')内外す」，「コメント内外す」，「関数名+(」，「ステートメント名+(」，
+  「（クラス名）.メソッド名」，「プリプロセッサ」，
+  「var変数(空白or=で判定)の中にある項などを見つけ次第デクリメント」
+  */
+  //選択された全ファイルを処理する
+  for(var i = 0;file[i] !== null;i++){
+    chr = reader.readAsText(files[i],'UTF-8');
+    for (var j = 0;arr[j] !== null;j++){
+
+      //arrの一要素に一文字ずつアクセス
+      for(var k = 0;arr[j].charAt(k) !== '\n';k++){
+        //tjsファイルに一文字ずつアクセス
+        for(var l = 0;chr.charAt(l) !== null;l++){
+
+          //tjsファイル内に同じ文字列があったらインクリメント
+          if(arr[j].charAt(k) === chr.charAt(l)){
+            jud = true;
+            for(var m=0;arr[j+m] !== '\n';m++){
+              if(arr[j].charAt(k+m) !== chr.charAt(l+m)){
+                jud = false;
+              }
+            }
+            if(jud === true){
+              arr[j][i+1]++;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+createCSV(arr); //arrは最終的な二次元配列
+}
+
+
 
 
 //csvファイルを作成する関数
