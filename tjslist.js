@@ -96,7 +96,7 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
-      for(var ll =0;ll != chr.length;ll++)if(chr.charAt(ll) == EOF)console.log("charAtはnullで終了指定");
+      for(var ll =0;ll != chr.length;ll++)if(chr.charAt(ll) == "\0")console.log("charAtはnullで終了指定");
       console.log(chr.length);
       if(arr[1][7]==null)consol.log("配列はnullで終了指定");
 
