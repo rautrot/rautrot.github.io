@@ -80,8 +80,6 @@ function serch(list, files){
   //選択された全ファイルを処理する
   
   for(var i = 0;i < files.length;i++){
-    console.log(files.length);
-    console.log(i);
   //列を一列増やす
   for(var n = 2;n < arr.length; n++){
     if(arr[n][0] === "" || arr[n-1][0] === "")continue;
@@ -111,6 +109,8 @@ function serch(list, files){
               k++;
             }
           }
+          
+    console.log(i);
           //コメント内をスキップする処理
           if(chr.charAt(k) === "/"){
             if(chr.charAt(k+1) === "/"){
@@ -130,6 +130,7 @@ function serch(list, files){
             }
           }
 
+    console.log(i);
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
