@@ -145,6 +145,7 @@ function serch(list, files){
       }
       
       //sumationを計算
+      var tmp;
         for(var i = 0;i < arr.length;i++){
     tmp += (arr[i].toString() + '\n');
   }
