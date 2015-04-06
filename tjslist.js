@@ -151,7 +151,7 @@ function serch(list, files){
           console.log(arr[i][j]);
           arr[i][1] += arr[i][j];
         }
-      }*/
+      }
 
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
@@ -172,7 +172,7 @@ function serch(list, files){
           i += 2;
           num = i;
         }
-      }
+      }*/
 
 
 createCSV(arr); //arrは最終的な二次元配列
