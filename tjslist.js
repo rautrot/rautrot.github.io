@@ -128,9 +128,6 @@ function serch(list, files){
             }
           }
 
-
-    console.log(arr[2][2]);
-
           //tjsファイル内に同じ文字列があったらインクリメント
           if(arr[j][0].charAt(0) === chr.charAt(k)){
             jud = true;
@@ -140,6 +137,7 @@ function serch(list, files){
               }
             }
             if(jud === true){
+              console.log(i);
               console.log(arr[2][i+2]);
               arr[2][2]++;
               console.log(arr[2][i+2]);
