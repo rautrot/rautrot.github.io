@@ -96,8 +96,9 @@ function serch(list, files){
     reader.readAsText(files[i],'UTF-8');
     reader.addEventListener("load", function (e) {
       chr = reader.result;
-
-      alert(chr);
+      if(chr.charAt(10000000) == null)console.log("charAtはnullで終了指定");
+      if(arr[1][7]==null)console.log("配列はnullで終了指定")
+      alert(chr);/*
       for (var j = 0;arr[j] !== null;j++){
         //tjsファイルに一文字ずつアクセス
         for(var k = 0;chr.charAt(k) !== null;k++){
@@ -115,7 +116,7 @@ function serch(list, files){
             }
           }
         }
-      }
+      }*/
 createCSV(arr); //arrは最終的な二次元配列
 });
 }
