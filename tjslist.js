@@ -72,7 +72,6 @@ function serch(list, files){
 
   // 検索処理
   console.log(files[0].name);
-  console.log(arr);
 
   /*
   検索の仕方
@@ -125,9 +124,10 @@ createCSV(arr); //arrは最終的な二次元配列
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
+  console.log(arr);
   // 指定されたデータを保持するBlobを作成する。
   while(arr[i] !== null){
-    tmp += arr[i]->toString() + '\n';
+    tmp += arr[i].toString() + '\n';
     i++;
   }
   var blob = new Blob([ tmp ], { "type" : "application/x-msdownload" });
