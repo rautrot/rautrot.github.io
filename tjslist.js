@@ -58,20 +58,26 @@ function serch(_list, _files){
   var jud = true; //比較判定用
   var reader = new FileReader();
 
-  // 検索処理
-  for(var i = 0;i < _files.length;i++){
-    //列を一列増やす
-    for(var n = 2;n < arr.length; n++){
-      if(arr[n][0] === "" || arr[n-1][0] === ""){
-        continue;
-      }
-      arr[n].push(parseInt("0"));
-    }
-    //ファイル名の追加
-    arr[0].push(_files[i].name);
 
+
+    var i = 0; //再帰関数用
     reader.readAsText(_files[i],'shift-JIS');
     reader.addEventListener("load", function (e) {
+      if(_files[i] === null){
+        createCSV(arr);
+        return;
+      }
+
+      //列を一列増やす
+      for(var n = 2;n < arr.length; n++){
+        if(arr[n][0] === "" || arr[n-1][0] === ""){
+          continue;
+       }
+        arr[n].push(parseInt("0"));
+      }
+
+      //ファイル名の追加
+      arr[0].push(_files[i].name);
       chr = reader.result;
 
       for (var j = 1;j < arr.length;j++){
@@ -131,10 +137,9 @@ function serch(_list, _files){
         }
       }
 
-
-      createCSV(arr);
+      i++;
+      reader.readAsText(_files[i],'shift-JIS');
     });
-  }
 }
 
 //csvファイルを作成する関数
