@@ -62,7 +62,7 @@ function serch(_list, _files){
 
     var reader = new FileReader();
 
-    reader.readAsText(_files[i],"utf-8");
+    reader.readAsText(_files[i],"UTF-8");
 
     //ファイル読み込みが完了するまで待機
     while(reader.readyState !== 2){}
