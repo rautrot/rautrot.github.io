@@ -62,6 +62,15 @@ function serch(_list, _files){
 
     var reader = new FileReader();
     reader.readAsText(_files[i],'shift-JIS');
+
+    // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          console.log(chr);
+        };
+      })(_files[i]);
+    
+      /*
     reader.addEventListener("onload", function (e) {
 
       //列を一列増やす
@@ -133,7 +142,7 @@ function serch(_list, _files){
         }
       }
       createCSV(arr);
-    });
+    }*/);
 }
 }
 
