@@ -167,8 +167,9 @@ function createCSV(arr) {
         }
       }      
 
-    // ,(カンマ)はcsv形式で扱うため全角に変更
+    // ,(カンマ)はcsv形式で扱うため文字に変更
     arr[22][0] = "カンマ";
+    /*
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
       for(var l = 2;l < arr.length;l++){
@@ -189,7 +190,7 @@ function createCSV(arr) {
           num = i;
         }
       }
-
+*/
   // 指定されたデータを保持するBlobを作成する。
   for(var i = 0;i < arr.length;i++){
     tmp += (arr[i].toString() + '\n');
