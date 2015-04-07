@@ -72,7 +72,7 @@ function serch(_list, _files){
     reader.readAsText(_files[i],'shift-JIS');
 
     //ファイル読み込みが完了するまで待機
-    while(reader.readyState != 2){}
+    while(reader.readyState !== 2){}
     
       /*
     reader.addEventListener("onload", function (e) {
