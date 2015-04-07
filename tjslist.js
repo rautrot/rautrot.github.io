@@ -67,7 +67,6 @@ function serch(_list, _files){
       arr[0].push(_files[i].name);
     reader[i].onload = function(evt){
       chr = evt.target.result;
-      console.log(evt);
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
@@ -134,12 +133,12 @@ function serch(_list, _files){
           }
         }
       }
-      index++;
     }
     createCSV(arr);
     
 
     reader[i].readAsText(f,"shift-JIS");
+    while(reader[i].readyState !== 2)consolo.log("未完了");
     }
 }
 
