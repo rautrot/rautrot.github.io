@@ -72,7 +72,7 @@ function serch(_list, _files){
     //ファイル読み込みが完了するまで待機
     console.log(reader.readyState);
 
-    }
+    
     
       /*
     reader.addEventListener("onload", function (e) {
