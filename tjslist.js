@@ -56,21 +56,18 @@ function serch(_list, _files){
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
-
+  var reader = new FileReader();
 
   for(var i = 0,f;f = _files[i];i++){
 
-    var reader = new FileReader();
-
+    console.log(reader.readyState);
     reader.onload = function(evt){
       chr = reader.result;
-      console.log(reader.readyState);
     }
 
     reader.readAsText(f,"shift-JIS");
 
     //ファイル読み込みが完了するまで待機
-    console.log(reader.state);
 
     
     
