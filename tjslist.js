@@ -61,7 +61,6 @@ function serch(_list, _files){
   for(var i = 0;i < _files.length;i++){
 
     var reader = new FileReader();
-    reader.readAsText(_files[i],'shift-JIS');
 
     // Closure to capture the file information.
       reader.onload = (function(theFile) {
@@ -70,6 +69,7 @@ function serch(_list, _files){
           console.log(chr);
         };
       })(_files[i]);
+    reader.readAsText(_files[i],'shift-JIS');
     
       /*
     reader.addEventListener("onload", function (e) {
