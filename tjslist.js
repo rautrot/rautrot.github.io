@@ -63,7 +63,7 @@ function serch(_list, _files){
 
     reader[i].onload = function(evt){
       chr = evt.target.result;
-      console.log(evt.target);
+      console.log(_files[0]);
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
