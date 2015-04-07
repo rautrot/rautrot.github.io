@@ -70,7 +70,7 @@ function serch(_list, _files){
     reader.readAsText(_files[i],"UTF-8");
 
     //ファイル読み込みが完了するまで待機
-    while(reader.readyState !== 2){
+    while(reader.readyState !== 1){
       console.log(reader.readyState);
     }
     
