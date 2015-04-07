@@ -70,7 +70,7 @@ function serch(_list, _files){
     reader.readAsText(f,"shift-JIS");
 
     //ファイル読み込みが完了するまで待機
-    console.log(reader.readyState);
+    console.log(reader.state);
 
     
     
