@@ -61,10 +61,6 @@ function serch(_list, _files){
 
   for(var i = 0;i < _files.length;i++){
     reader.readAsText(_files[i],'shift-JIS');
-    //読み込みを待つ
-    while(1){
-      if(reader.)
-    }
     reader.addEventListener("onload", function (e) {
       if(_files[i] === null){
         createCSV(arr);
