@@ -62,6 +62,9 @@ function serch(_list, _files){
   for(var i = 0,f;f = _files[i];i++){
     reader[i] = new FileReader();
 
+
+      //ファイル名の追加
+      arr[0].push(_files[i].name);
     reader[i].onload = function(evt){
       chr = evt.target.result;
       console.log(evt);
@@ -74,8 +77,6 @@ function serch(_list, _files){
         arr[n].push(parseInt("0"));
       }
 
-      //ファイル名の追加
-      arr[0].push(_files[i].name);
 
       for (var j = 1;j < arr.length;j++){
         
@@ -128,7 +129,7 @@ function serch(_list, _files){
               }
             }
             if(jud === true){
-              arr[j][index+2]++;
+              arr[j][arr[j].length-1]++;
             }
           }
         }
