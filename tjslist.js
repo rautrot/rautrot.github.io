@@ -87,7 +87,7 @@ function serch(list, files){
 
     arr[0].push(files[i].name);
     //ファイルの中身を引き出し，chrに格納
-    reader.readAsText(files[i],'UTF-8');
+    reader.readAsText(files[i],'shift-JIS');
 
     //この関数が動作する前に一度ループが終わっているのでiが1になる
     reader.addEventListener("load", function (e) {
@@ -168,7 +168,7 @@ function createCSV(arr) {
       }      
 
     // ,(カンマ)はcsv形式で扱うため全角に変更
-    arr[21][0] = "，";
+    arr[22][0] = "カンマ";
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
       for(var l = 2;l < arr.length;l++){
