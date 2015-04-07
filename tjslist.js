@@ -155,7 +155,7 @@ function serch(list, files){
 
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
-      for(var  = 2;l < arr.length;l++){
+      for(var l = 2;l < arr.length;l++){
         if(arr[l][0] === ""){
           for(var j = num;j < l;j++){
             for(var k = num;k < l-(j-num)-1;k++){
