@@ -73,9 +73,7 @@ function serch(list, files){
 
   /*
   検索の仕方
-  「""('')内外す」，「コメント内外す」，「関数名+(」，「ステートメント名+(」，
-  「（クラス名）.メソッド名」，「プリプロセッサ」，
-  「var変数(空白or=で判定)の中にある項などを見つけ次第デクリメント」
+  「""('')内外す」，「コメント内外す」
   */
   //選択された全ファイルを処理する
   
@@ -88,14 +86,12 @@ function serch(list, files){
     //ファイル名の追加
 
     arr[0].push(files[i].name);
-    console.log(i);
     //ファイルの中身を引き出し，chrに格納
     reader.readAsText(files[i],'UTF-8');
-    console.log(i);
+
+    //この関数が動作する前に一度ループが終わっているのでiが1になる
     reader.addEventListener("load", function (e) {
-    console.log(i);
       chr = reader.result;
-    console.log(i);
 
       for (var j = 1;j < arr.length;j++){
         //属性と空白行は飛ばす
@@ -153,17 +149,16 @@ function serch(list, files){
       for(var n = 1;n < arr.length;n++){
         if(arr[n][0] == "" || arr[n-1][0] == "")continue;
         for(var m = 2;m < arr[n].length;m++){
-          console.log(arr[n][1]);
           arr[n][1] += arr[n][m];
         }
       }
-/*
+
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
-      for(var i = 2;i < arr.length;i++){
-        if(arr[i][0] === ""){
-          for(var j = num;j < i;j++){
-            for(var k = num;k < i-(j-num)-1;k++){
+      for(var  = 2;l < arr.length;l++){
+        if(arr[l][0] === ""){
+          for(var j = num;j < l;j++){
+            for(var k = num;k < l-(j-num)-1;k++){
               if(arr[k][1] < arr[k+1][1]){
                 var tmpArray;
                 tmpArray = arr[k];
@@ -174,11 +169,11 @@ function serch(list, files){
             }
           }
 
-          i += 2;
+          l += 2;
           num = i;
         }
       }
-      */
+      
 
 createCSV(arr); //arrは最終的な二次元配列
 });
@@ -193,7 +188,7 @@ function createCSV(arr) {
   var i = 0;
   var tmp ='';
   // ,(カンマ)はcsv形式で扱うため全角に変更
-  arr[23][0] = "，";
+  arr[20][0] = "，";
 
   // 指定されたデータを保持するBlobを作成する。
   for(var i = 0;i < arr.length;i++){
