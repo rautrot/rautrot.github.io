@@ -64,7 +64,7 @@ function serch(_list, _files){
 
     reader.onload = function(evt){
       chr = reader.result;
-      console.log(chr);
+      console.log(reader.readyState);
     }
 
     reader.readAsText(f,"shift-JIS");
