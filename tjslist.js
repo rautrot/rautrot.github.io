@@ -59,10 +59,13 @@ function serch(_list, _files){
   var reader = new FileReader();
 
 
-
-    var i = 0; //再帰関数用
+  for(var i = 0;i < _files.length;i++){
     reader.readAsText(_files[i],'shift-JIS');
-    reader.addEventListener("load", function (e) {
+    //読み込みを待つ
+    while(1){
+      if(reader.)
+    }
+    reader.addEventListener("onload", function (e) {
       if(_files[i] === null){
         createCSV(arr);
         return;
@@ -136,10 +139,8 @@ function serch(_list, _files){
           }
         }
       }
-
-      i++;
-      reader.readAsText(_files[i],'shift-JIS');
     });
+}
 }
 
 //csvファイルを作成する関数
@@ -194,3 +195,6 @@ function createCSV(_arr) {
   $("#download").attr("href", window.URL.createObjectURL(blob));
   $("#download").attr("download", "tjslist.txt"); //ファイル名の指定
 }
+
+
+
