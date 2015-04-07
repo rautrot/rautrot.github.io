@@ -60,10 +60,6 @@ function serch(_list, _files){
   var index = 0;
 
   for(var i = 0,f;f = _files[i];i++){
-    if(reader[i].readyState === 1){
-      i--;
-      continue;
-    }
     reader[i] = new FileReader();
 
 
@@ -137,6 +133,10 @@ function serch(_list, _files){
           }
         }
       }
+      if(index === _files.length-1){
+        createCSV(arr);
+      }
+      index++;
     }
     //createCSV(arr);
     
