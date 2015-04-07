@@ -57,13 +57,14 @@ function serch(_list, _files){
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
   var reader = [];
+  var index = 0;
 
   for(var i = 0,f;f = _files[i];i++){
     reader[i] = new FileReader();
 
     reader[i].onload = function(evt){
       chr = evt.target.result;
-      console.log(_files[0]);
+      console.log(evt);
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
@@ -127,13 +128,15 @@ function serch(_list, _files){
               }
             }
             if(jud === true){
-              arr[j][i+2]++;
+              arr[j][index+2]++;
             }
           }
         }
       }
-      createCSV(arr);
+      index++;
     }
+    createCSV(arr);
+    
 
     reader[i].readAsText(f,"shift-JIS");
     }
