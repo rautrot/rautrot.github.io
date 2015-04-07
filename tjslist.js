@@ -66,6 +66,7 @@ function serch(_list, _files){
     // Closure to capture the file information.
       reader.onload = (function(theFile) {
         return function(e) {
+          chr = reader.result;
           console.log(chr);
         };
       })(_files[i]);
