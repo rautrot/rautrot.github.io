@@ -56,16 +56,13 @@ function serch(_list, _files){
 
   var chr = ''; //データ格納用
   var jud = true; //比較判定用
-  var reader = new FileReader();
 
 
   for(var i = 0;i < _files.length;i++){
+
+    var reader = new FileReader();
     reader.readAsText(_files[i],'shift-JIS');
     reader.addEventListener("onload", function (e) {
-      if(_files[i] === null){
-        createCSV(arr);
-        return;
-      }
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
