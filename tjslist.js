@@ -134,11 +134,11 @@ function serch(_list, _files){
         }
       }
     }
-    createCSV(arr);
+    //createCSV(arr);
     
 
     reader[i].readAsText(f,"shift-JIS");
-    while(reader[i].readyState !== 2)consolo.log("未完了");
+    while(reader[i].readyState !== 2)console.log("未完了");
     }
 }
 
