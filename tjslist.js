@@ -60,8 +60,10 @@ function serch(_list, _files){
 
   for(var i = 0,f;f = _files[i];i++){
     reader[i] = new FileReader();
+
     reader[i].onload = function(evt){
       chr = evt.target.result;
+      console.log(i);
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
