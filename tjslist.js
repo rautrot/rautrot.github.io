@@ -42,7 +42,7 @@ function serch(_list, _files){
 
   //２次元配列の用意
   var arr = [];
-  for(var i = 0,f;f = _files[i]; i++){
+  for(var i = 0;i < tmp.length; i++){
     arr[i] = new Array(tmp[i]);
   }
   for(var i = 1;i < arr.length; i++){
@@ -58,7 +58,7 @@ function serch(_list, _files){
   var jud = true; //比較判定用
 
 
-  for(var i = 0;i < _files.length;i++){
+  for(var i = 0,f;f = _files[i];i++){
 
     var reader = new FileReader();
 
