@@ -152,7 +152,9 @@ function serch(list, files){
           arr[n][1] += arr[n][m];
         }
       }
-
+      
+  // ,(カンマ)はcsv形式で扱うため全角に変更
+  arr[20][0] = "，";
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
       for(var l = 2;l < arr.length;l++){
@@ -187,8 +189,6 @@ createCSV(arr); //arrは最終的な二次元配列
 function createCSV(arr) {
   var i = 0;
   var tmp ='';
-  // ,(カンマ)はcsv形式で扱うため全角に変更
-  arr[20][0] = "，";
 
   // 指定されたデータを保持するBlobを作成する。
   for(var i = 0;i < arr.length;i++){
