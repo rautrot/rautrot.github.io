@@ -59,7 +59,7 @@ function serch(_list, _files){
   var reader = [];
 
   for(var i = 0,f;f = _files[i];i++){
-    reader[i] = f;
+    reader[i] = new FileReader();
     reader[i].onload = function(evt){
       chr = reader.result;
     }
