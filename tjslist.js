@@ -67,11 +67,11 @@ function serch(_list, _files){
       console.log(chr);
     }
 
-    reader.readAsText(_files[i],"UTF-8");
+    reader.readAsText(f,"shift-JIS");
 
     //ファイル読み込みが完了するまで待機
-    while(reader.readyState !== 1){
-      console.log(reader.readyState);
+    while(reader.readyState !== 2){
+
     }
     
       /*
