@@ -70,11 +70,9 @@ function serch(_list, _files){
     reader.readAsText(_files[i],"UTF-8");
 
     //ファイル読み込みが完了するまで待機
-    console.log("ここまで!!!");
     while(reader.readyState !== 2){
-
+      console.log(reader.readyState);
     }
-    console.log("次！！！");
     
       /*
     reader.addEventListener("onload", function (e) {
