@@ -62,17 +62,12 @@ function serch(_list, _files){
 
     var reader = new FileReader();
 
-    // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          chr = reader.result;
-          console.log(chr);
-        };
-      })(_files[i]);
-    reader.readAsText(_files[i],'shift-JIS');
+    reader.readAsText(_files[i],"utf-8");
 
     //ファイル読み込みが完了するまで待機
     while(reader.readyState !== 2){}
+    chr = reader.result;
+    console.log(chr);
     
       /*
     reader.addEventListener("onload", function (e) {
