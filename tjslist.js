@@ -132,6 +132,7 @@ function serch(_list, _files){
           }
         }
       }
+      createCSV(arr);
     });
 }
 }
