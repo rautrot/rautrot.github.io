@@ -62,7 +62,7 @@ function serch(_list, _files){
 
     var reader = new FileReader();
 
-    reader.onload = funtion(evt){
+    reader.onload = function(evt){
       chr = reader.result;
       console.log(chr);
     }
