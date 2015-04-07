@@ -62,17 +62,6 @@ function serch(_list, _files){
     reader[i] = new FileReader();
     reader[i].onload = function(evt){
       chr = evt.target.result;
-      console.log(chr);
-    }
-
-    reader[i].readAsText(f,"shift-JIS");
-
-    //ファイル読み込みが完了するまで待機
-
-    
-    
-      /*
-    reader.addEventListener("onload", function (e) {
 
       //列を一列増やす
       for(var n = 2;n < arr.length; n++){
@@ -84,7 +73,6 @@ function serch(_list, _files){
 
       //ファイル名の追加
       arr[0].push(_files[i].name);
-      chr = reader.result;
 
       for (var j = 1;j < arr.length;j++){
         
@@ -143,7 +131,9 @@ function serch(_list, _files){
         }
       }
       createCSV(arr);
-    });*/
+    }
+
+    reader[i].readAsText(f,"shift-JIS");
     }
 }
 
