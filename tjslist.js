@@ -62,12 +62,15 @@ function serch(_list, _files){
 
     var reader = new FileReader();
 
+    reader.onload = funtion(evt){
+      chr = reader.result;
+      console.log(chr);
+    }
+
     reader.readAsText(_files[i],"UTF-8");
 
     //ファイル読み込みが完了するまで待機
     while(reader.readyState !== 2){}
-    chr = reader.result;
-    console.log(chr);
     
       /*
     reader.addEventListener("onload", function (e) {
