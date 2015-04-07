@@ -168,7 +168,7 @@ function createCSV(arr) {
       }      
 
     // ,(カンマ)はcsv形式で扱うため文字に変更
-    arr[22][0] = "カンマ";
+    arr[20][0] = "カンマ";
     /*
       //arrを空白行で分けてsortする(バブルソート)
       var num = 2;
