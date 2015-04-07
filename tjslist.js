@@ -71,7 +71,10 @@ function serch(_list, _files){
 
     //ファイル読み込みが完了するまで待機
     console.log("ここまで!!!");
-    while(reader.readyState !== 2){}
+    while(reader.readyState !== 2){
+
+    }
+    console.log("次！！！");
     
       /*
     reader.addEventListener("onload", function (e) {
