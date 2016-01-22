@@ -11,24 +11,24 @@ function draw() {
   }
     var i,j;
     var n = new Array();
-    for(i=0;i<100;i++){
+    for(i=0;i<50;i++){
         n[i]= new Array();
-        for(j=0;j<100;j++){
+        for(j=0;j<50;j++){
             n[i][j]=0;
         }
     }
     n = seed(n);    
 
   /* 描く */
-  lineDraw();
-  setTimeout(dr,3000,n);
+  setTimeout(dr,500,n);
 };
 
 function dr(n){
+    var i,j;
     var ctx = document.getElementById('canvassample').getContext('2d');
     ctx.clearRect(0,0,1000,1000);
-    for(i=1;i<100;i++){
-        for(j=1;j<100;j++){
+    for(i=1;i<50;i++){
+        for(j=1;j<50;j++){
             if(n[i][j]==1){  
                 /* 2Dコンテキスト */
                 ctx.fillStyle='rgb(105,189,131)';
@@ -48,16 +48,16 @@ function nextLife(dat){
     //dat は２次元配列
     //配列の初期化
     var n = new Array();
-    for(i=0;i<100;i++){
+    for(i=0;i<50;i++){
         n[i] = new Array();
-        for(j=0;j<100;j++){
+        for(j=0;j<50;j++){
             n[i].push(0);
         }
     }
     
     //ライフゲームのルールに沿って配列を生成
-    for(i=1;i<99;i++){
-        for(j=1;j<99;j++){
+    for(i=1;i<49;i++){
+        for(j=1;j<49;j++){
             cnt = 0;
             //周りのセルの生存数
             if(dat[i-1][j-1]==1)cnt++;
