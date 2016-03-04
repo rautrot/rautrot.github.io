@@ -1,7 +1,29 @@
+n = new Array();
+
 onload = function() {
+    document.getElementById("button1").disabled = "";
   lineDraw();
-  draw();
+  //draw();
+  var i,j;
+    for(i=0;i<50;i++){
+        n[i]= new Array();
+        for(j=0;j<50;j++){
+            n[i][j]=0;
+        }
+    }
 };
+
+
+function rand(){
+    var i,j;
+    for(i=0;i<50;i++){
+        for(j=0;j<50;j++){
+            n[i][j] = Math.floor(Math.random()*(1 - 0 + 1))+0;
+        }
+    }
+    document.getElementById("button1").disabled = "true";
+    draw();    
+}
 
 function draw() {
   /* canvas要素の存在チェックとCanvas未対応ブラウザの対処 */
@@ -9,14 +31,7 @@ function draw() {
   if ( ! canvas || ! canvas.getContext ) {
     return false;
   }
-    var i,j;
-    var n = new Array();
-    for(i=0;i<50;i++){
-        n[i]= new Array();
-        for(j=0;j<50;j++){
-            n[i][j]=0;
-        }
-    }
+    
     n = seed(n);    
 
   /* 描く */
@@ -47,11 +62,11 @@ function nextLife(dat){
     var i,j,cnt;
     //dat は２次元配列
     //配列の初期化
-    var n = new Array();
+    var n2 = new Array();
     for(i=0;i<50;i++){
-        n[i] = new Array();
+        n2[i] = new Array();
         for(j=0;j<50;j++){
-            n[i].push(0);
+            n2[i].push(0);
         }
     }
     
@@ -71,16 +86,16 @@ function nextLife(dat){
             
             //死んでいるセルの場合
             if(dat[i][j]==0){
-                if(cnt == 3)n[i][j]=1;
+                if(cnt == 3)n2[i][j]=1;
             }
             //生きているセルの場合
             else{
-                if(cnt == 2 || cnt == 3)n[i][j]=1;
+                if(cnt == 2 || cnt == 3)n2[i][j]=1;
             }
         }
     }
     delete dat;
-    return n;
+    return n2;
 };
 
 //マス目作成
