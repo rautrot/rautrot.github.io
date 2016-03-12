@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>get started with three.js</title>
+</head>
+<body>
+	<script src="three.min.js"></script>
+	<script>
+		var main = function(){
+			//write program
+			var scene = new THREE.Scene();
+
+			//setting camera
+			var width = 600;
+			var height = 400;
+			var fov = 60;
+			var aspect = width / height;
+			var near = 1;
+			var far = 1000;
+			var camera = new THREE.PerspectiveCamera(fov,aspect,near,far);
+			camera.position.set(20,35,150);
+
+			//position of D
+			var position = [
+			[-5,0,0],
+			[-5,15,0],
+			[-5,30,0],
+			[-5,45,0],
+			[-5,60,0],
+			[-5,75,0],
+			[10,2,0],
+			[10,73,0],
+			[25,10,0],
+			[25,65,0],
+			[40,21,0],
+			[40,54,0],
+			[43,38,0]
+			]
+
+			//renderer
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(width,height);
+			document.body.appendChild(renderer.domElement);
+
+			//direction of light
+			var directionalLight = new THREE.DirectionalLight(0xffffff);
+			directionalLight.position.set(0,0.7,0.7);
+			scene.add(directionalLight);
+
+			//set material
+			var geometry = new THREE.CubeGeometry(10,10,10);
+			var material = new THREE.MeshPhongMaterial({color: 0x00ff00});
+			var mesh = [];
+			for(var i = 0;i<position.length;i++){
+				mesh[i] = new THREE.Mesh(geometry, material);
+				mesh[i].position.set(position[i][0],position[i][1],position[i][2]);
+				scene.add(mesh[i]);
+			}
+
+			//render
+			renderer.render(scene,camera);
+
+			//rot
+			(function renderLoop(){
+				requestAnimationFrame(renderLoop);
+				for(var i =0; i<mesh.length;i++){
+				mesh[i].rotation.set(0,mesh[i].rotation.y+0.05,mesh[i].rotation.z + 0.05);
+			}
+				renderer.render(scene,camera);
+			})();
+		};
+
+		window.addEventListener('DOMContentLoaded',main,false);
+	</script>
+</body>
+</html>

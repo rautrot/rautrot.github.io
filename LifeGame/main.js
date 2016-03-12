@@ -1,9 +1,9 @@
 n = new Array();
+n2 = new Array();
 
 onload = function() {
     document.getElementById("button1").disabled = "";
   lineDraw();
-  //draw();
   var i,j;
     for(i=0;i<50;i++){
         n[i]= new Array();
@@ -11,6 +11,14 @@ onload = function() {
             n[i][j]=0;
         }
     }
+    for(i=0;i<50;i++){
+        n2[i]= new Array();
+        for(j=0;j<50;j++){
+            n2[i][j]=0;
+        }
+    }
+    //draw();
+    rand();
 };
 
 
@@ -18,11 +26,16 @@ function rand(){
     var i,j;
     for(i=0;i<50;i++){
         for(j=0;j<50;j++){
-            n[i][j] = Math.floor(Math.random()*(1 - 0 + 1))+0;
+            n[i][j] = 0;
+        }
+    }
+    for(i=0;i<50;i++){
+        for(j=0;j<50;j++){
+            n2[i][j] = Math.floor(Math.random()*(1 - 0 + 1))+0;
         }
     }
     document.getElementById("button1").disabled = "true";
-    draw();    
+    dr(n2); 
 }
 
 function draw() {
@@ -35,26 +48,37 @@ function draw() {
     n = seed(n);    
 
   /* 描く */
-  setTimeout(dr,500,n);
+  //setTimeout(dr,500,n);
+  dr(n);
 };
 
-function dr(n){
+function dr(n1){
     var i,j;
     var ctx = document.getElementById('canvassample').getContext('2d');
     ctx.clearRect(0,0,1000,1000);
     for(i=1;i<50;i++){
         for(j=1;j<50;j++){
-            if(n[i][j]==1){  
+                if(n1[i][j]==1){  
                 /* 2Dコンテキスト */
                 ctx.fillStyle='rgb(105,189,131)';
                 ctx.fillRect(j*20,i*20,20,20);
             }
         }
-    } 
-    n = nextLife(n);
-    
+    }
+
+    //*****************************
+    var jud=0;
+    for(i=0;i<50;i++){
+        for(j=0;j<50;j++){
+            if(n1[i][j]!=0)jud=1;
+        }
+    }
+    if(jud==0)return false;
+    //*****************************
+
+    n1 = nextLife(n1);
     //ここで速さを調節する
-    setTimeout(dr,300,n);
+    setTimeout(dr,300,n1);
 }
 
 //次のセル情報
