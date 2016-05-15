@@ -29,13 +29,17 @@
 			document.body.appendChild(renderer.domElement);
 
 			//direction of light
+			/*
 			var directionalLight = new THREE.DirectionalLight(0xffffff);
 			directionalLight.position.set(0,0.7,0.7);
 			scene.add(directionalLight);
+			*/
 
 			//set material
 			var geometry = new THREE.SphereGeometry(10,10,10);
-			var material = new THREE.MeshPhongMaterial({color: 0x00ff00});
+			var material = new THREE.MeshPhongMaterial({emissive: 0x00ff00});
+			material.opacity = 0.5;
+			material.tansparent = true;
 			
 			var mesh = new THREE.Mesh(geometry,material);
 			mesh.position.set(0,0,0);
