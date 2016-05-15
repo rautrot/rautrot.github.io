@@ -29,21 +29,27 @@
 			document.body.appendChild(renderer.domElement);
 
 			//direction of light
-			/*
+			
 			var directionalLight = new THREE.DirectionalLight(0xffffff);
 			directionalLight.position.set(0,0.7,0.7);
 			scene.add(directionalLight);
-			*/
+			
 
 			//set material
 			var geometry = new THREE.SphereGeometry(10,10,10);
 			var material = new THREE.MeshPhongMaterial({emissive: 0x00ff00});
 			material.opacity = 0.1;
 			material.tansparent = true;
-			
+			var geometry = new THREE.CubeGeometry(15,15,15);
+			var material2 = new THREE.MeshPhongMaterial({color: 0xff0000});
+
+			var mesh2 = new THREE.Mesh(geometry,material2);
+			mesh2.position.set(0,0,0);
+			scene.add(mesh2);			
 			var mesh = new THREE.Mesh(geometry,material);
 			mesh.position.set(0,0,0);
 			scene.add(mesh);
+
 			/*
 			var mesh = [];
 			for(var i = 0;i<position.length;i++){
