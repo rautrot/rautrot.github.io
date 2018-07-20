@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <style>
+    label {
+      color: white;
+      background-color: black;
+      padding: 6px;
+      border-radius: 12px;
+    }
+  </style>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>AdvancedMath</title>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+
+  </head>
+  <body bgcolor="#000000">
+    <h1><font color="#69BD83">AdvancedMath</font></h1>
+    <h3><font color="#AAAAAA">ファイルの形式： 「0」「1」「,(カンマ)」「\n(改行)」のみで構成されるテキストファイル<br>
+    又は，テキストボックスへの入力.<br>
+    ※入力データの要素数が少なくなればなるほど，一マスの大きさが大きくなります．<br><br>
+    <label for="f_input">
+      <form name="f_input">
+        <input type="file" value="Input Binary File"  name="input_file" id="f_input">
+      </form>
+    </label>
+    <form name="form1" id="id_form1" action="">
+      <textarea name="textBox1" id="id_textBox1" cols="50" rows="10"></textarea>
+      <input type="button" value="DRAW" onclick="onButtonClick();" style="WIDTH:100px;font-size:30em">
+    </form>
+    <br><br>
+    <script src="main.js"></script>
+    <canvas id="canvassample" width="1000" height="1000" style="position:absolute; left:100; top:100; z-index:0;"></canvas>
+  </body>
+</html>
