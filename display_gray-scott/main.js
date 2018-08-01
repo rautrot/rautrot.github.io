@@ -91,9 +91,9 @@ function onButtonClick(){
   var text_data = document.forms.id_form1.id_textBox1.value;
   var X_num, Y_num, data;
 
-  data = text_data.replace("\n\n","\n").split("\n");
+  data = text_data.slice(0,text_data.length-1).split("\n");
   if(data[0][data.length-1] == ","){ // 最後の文字がカンマになってるときは最後のカンマを消す
-    data[0] = data[0].slice(0,data.length-1);
+    data[0] = data[0].slice(0,data[0].length-1);
   }
   X_num = data[0].split(",").length;
 
