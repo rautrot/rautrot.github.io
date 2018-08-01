@@ -6,8 +6,8 @@
 
 document.forms.id_form1.id_textBox1.value = "1,0,0,2,0,1\n0,1,3,0,1,0\n1,0,1,0,2,0";
 
-var WIDTH = 1000; // キャンバスの横幅
-var HEIGHT = 1000; // キャンバスの高さ
+var WIDTH = 1500; // キャンバスの横幅
+var HEIGHT = 1500; // キャンバスの高さ
 var L = 0; //数値の最大値を格納
 
 // ファイル入力フォーム
@@ -87,10 +87,11 @@ form.input_file.addEventListener('change', function(e){
 
 // テキストボックスへの入力からボタンが押されたとき
 function onButtonClick(){
+  L = 0;
   var text_data = document.forms.id_form1.id_textBox1.value;
   var X_num, Y_num, data;
 
-  data = text_data.split("\n");
+  data = text_data.replace("\n\n","\n").split("\n");
   if(data[0][data.length-1] == ","){ // 最後の文字がカンマになってるときは最後のカンマを消す
     data[0] = data[0].slice(0,data.length-1);
   }
@@ -131,9 +132,9 @@ function draw(binary_data, X_num, Y_num) {
 
   var i,j;
   var ctx = document.getElementById('canvassample').getContext('2d');
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0,0,WIDTH,HEIGHT);
   ctx.fillStyle='rgb(100,100,100)';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillRect(0,0,WIDTH,HEIGHT);
   for(i=0;i<Y_num;i++){
       for(j=0;j<X_num;j++){
           var val = binary_data[i][j];
@@ -152,7 +153,6 @@ function lineDraw(X_num, Y_num){
 
     delta_x = WIDTH / X_num;
     delta_y = HEIGHT / Y_num;
-
 
     ctx.strokeStyle='rgb(255,100,100)';
     ctx.strokeRect=(0,0,WIDTH,HEIGHT);
