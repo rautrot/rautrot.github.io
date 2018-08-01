@@ -4,7 +4,7 @@
 // ファイル入力処理
 //    先頭においちゃう？
 
-document.forms.id_form1.id_textBox1.value = "1,0,0,2,0,1\n0,1,-2,0,1,0\n1,0,1,0,2,0";
+document.forms.id_form1.id_textBox1.value = "1,0,0,2,0,1\n0,1,3,0,1,0\n1,0,1,0,2,0";
 
 var WIDTH = 1000; // キャンバスの横幅
 var HEIGHT = 1000; // キャンバスの高さ
