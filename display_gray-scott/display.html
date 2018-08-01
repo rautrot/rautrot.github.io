@@ -20,9 +20,9 @@
 
 
   </head>
-  <body bgcolor="#000000">
-    <h1><font color="#69BD83">AdvancedMath(for ECA)</font></h1>
-    <h3><font color="#AAAAAA">ファイルの形式： 「0」「1」「,(カンマ)」「\n(改行)」のみで構成されるテキストファイル<br>
+  <body bgcolor="#FFFFFF">
+    <h1><font color="#69BD83">AdvancedMath(for Gray-Scott)</font></h1>
+    <h3><font color="#AAAAAA">ファイルの形式： 整数「,(カンマ)」「\n(改行)」のみで構成されるテキストファイル<br>
     又は，テキストボックスへの入力.<br>
     ※入力データの要素数が少なくなればなるほど，一マスの大きさが大きくなります．<br><br>
     <label for="f_input">
@@ -35,7 +35,11 @@
       <input type="button" value="DRAW" onclick="onButtonClick();" style="WIDTH:200px;font-size:3em">
     </form>
     <br><br>
+    数値の最大値をLとします．<br>
+    色は以下のようになります．<br><br>
     <script src="main.js"></script>
+    <canvas id="colorsample" width="500" height="30" style="position:absolute; left:100; top:100; z-index:0;"></canvas>
+    <br><br>
     <canvas id="canvassample" width="1000" height="1000" style="position:absolute; left:100; top:100; z-index:0;"></canvas>
   </body>
 </html>
