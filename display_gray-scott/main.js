@@ -27,7 +27,7 @@ onload = function() {
   //文字の表示
   ctx1.fillStyle=('rgb(0,0,0)');
   ctx1.font = "20px 'ＭＳ　ゴシック'";
-  ctx1.fillText('-L',0,20,50);
+  ctx1.fillText('0',0,20,50);
   ctx1.fillText('L',435,20,50);
 
   // キャンバスの初期化
@@ -137,7 +137,7 @@ function draw(binary_data, X_num, Y_num) {
   for(i=0;i<Y_num;i++){
       for(j=0;j<X_num;j++){
           var val = binary_data[i][j];
-          val = ((val + L) / (2*L)) * 122.5;
+          val = val / L * 122.5;
           ctx.fillStyle='rgb(' + Math.ceil(val) + ',' + Math.ceil(2*val) + ',' + Math.ceil(val) + ')';
           ctx.fillRect(j*delta_x,i*delta_y,Math.ceil(delta_x),Math.ceil(delta_y));
       }
